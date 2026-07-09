@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仙本那 5 天旅行计划 | 2026.8.17-8.21</title>
+<style>
+  :root {
+    --ocean-deep: #0a4c6e;
+    --ocean-mid: #14919b;
+    --ocean-light: #48cae4;
+    --sand: #fef9f0;
+    --coral: #e76f51;
+    --gold: #f4a261;
+    --text: #2d3436;
+    --text-light: #636e72;
+    --white: #ffffff;
+    --card-bg: rgba(255,255,255,0.92);
+    --shadow: 0 4px 24px rgba(0,0,0,0.06);
+    --shadow-hover: 0 8px 32px rgba(0,0,0,0.10);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(180deg, #e8f6f8 0%, #fef9f0 40%, #e8f4f0 100%);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0a4c6e 0%, #0d7377 40%, #14919b 100%);
+    color: var(--white);
+    padding: 64px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60%; left: -20%;
+    width: 140%; height: 200%;
+    background: radial-gradient(ellipse at 30% 70%, rgba(72,202,228,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(244,162,97,0.10) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 700;
+    letter-spacing: 1px;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .hero .subtitle {
+    font-size: 18px;
+    opacity: 0.85;
+    position: relative;
+    letter-spacing: 2px;
+  }
+  .hero .badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    position: relative;
+  }
+  .hero .badge {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 24px;
+    padding: 6px 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  /* WAVE DIVIDER */
+  .wave-divider {
+    height: 48px;
+    background: linear-gradient(180deg, #14919b 0%, #e8f6f8 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    margin-bottom: -2px;
+  }
+
+  /* MAIN CONTAINER */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  /* SECTION TITLES */
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ocean-deep);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ocean-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon { font-size: 24px; }
+
+  /* CARDS */
+  .card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 28px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: box-shadow 0.3s;
+  }
+  .card:hover { box-shadow: var(--shadow-hover); }
+
+  /* QUICK FACTS GRID */
+  .quick-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .fact-item {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+  .fact-item .fact-icon { font-size: 28px; margin-bottom: 6px; }
+  .fact-item .fact-label { font-size: 12px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+  .fact-item .fact-value { font-size: 16px; font-weight: 600; color: var(--ocean-deep); margin-top: 2px; }
+
+  /* WEATHER TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  th {
+    background: var(--ocean-deep);
+    color: var(--white);
+    padding: 12px 10px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  th:first-child { border-radius: 8px 0 0 0; }
+  th:last-child { border-radius: 0 8px 0 0; }
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #e8efef;
+  }
+  tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+  tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+  tr:nth-child(even) td { background: #f8fcfc; }
+  .rain-high { color: var(--coral); font-weight: 600; }
+
+  /* DAY CARDS */
+  .day-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: box-shadow 0.3s;
+  }
+  .day-card:hover { box-shadow: var(--shadow-hover); }
+  .day-header {
+    background: linear-gradient(135deg, #0a4c6e, #14919b);
+    color: var(--white);
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .day-header .day-num {
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .day-header .day-info { flex: 1; }
+  .day-header .day-date { font-size: 13px; opacity: 0.8; }
+  .day-header .day-title { font-size: 18px; font-weight: 600; }
+  .day-header .day-route {
+    background: rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 4px 14px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+  .day-body { padding: 24px 28px; }
+  .timeline { list-style: none; }
+  .timeline li {
+    display: flex;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e8efef;
+    align-items: flex-start;
+  }
+  .timeline li:last-child { border-bottom: none; }
+  .timeline .time {
+    background: #e8f6f8;
+    color: var(--ocean-mid);
+    font-weight: 600;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .timeline .desc { flex: 1; }
+  .timeline .desc strong { color: var(--ocean-deep); }
+  .timeline .desc .note { font-size: 13px; color: var(--text-light); margin-top: 2px; }
+
+  /* BUDGET TABLE */
+  .budget-table td:last-child { text-align: right; font-weight: 500; }
+  .budget-table .total-row td {
+    font-weight: 700;
+    background: #e8f6f8;
+    color: var(--ocean-deep);
+    font-size: 16px;
+  }
+
+  /* TIP BOX */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .tip-box {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--coral);
+    font-size: 14px;
+  }
+  .tip-box.warn { border-left-color: var(--coral); }
+  .tip-box.info { border-left-color: var(--ocean-mid); }
+  .tip-box h4 { font-size: 15px; margin-bottom: 8px; color: var(--text); }
+
+  /* CHECKLIST */
+  .checklist {
+    columns: 2;
+    column-gap: 32px;
+    list-style: none;
+    font-size: 14px;
+  }
+  .checklist li {
+    padding: 5px 0;
+    break-inside: avoid;
+  }
+  .checklist li::before {
+    content: '☐';
+    margin-right: 8px;
+    color: var(--ocean-mid);
+    font-size: 14px;
+  }
+  @media (max-width: 600px) { .checklist { columns: 1; } }
+
+  /* HOTEL CARDS */
+  .hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .hotel-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  .hotel-card .level {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .level-budget { background: #e8f4f0; color: #2d6a4f; }
+  .level-mid { background: #e8f0fe; color: #1e6091; }
+  .level-luxury { background: #fef3e8; color: #c77d20; }
+  .hotel-card h4 { font-size: 15px; margin: 6px 0; }
+  .hotel-card .price { font-size: 18px; font-weight: 700; color: var(--coral); }
+  .hotel-card .desc { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+  /* CANVAS ROUTE MAP */
+  .route-canvas {
+    display: block;
+    width: 100%; max-width: 440px;
+    height: 200px;
+    margin: 14px auto 4px;
+    border-radius: 12px;
+    border: 1px solid #d4e8ec;
+    background: #dceef3;
+  }
+  .map-note { font-size: 12px; color: var(--text-light); margin: 2px 0 6px; font-style: italic; text-align: center; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 32px;
+    color: var(--text-light);
+    font-size: 13px;
+    border-top: 1px solid #e0e8e8;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>🏝️ 仙本那 5 天旅行计划</h1>
+  <p class="subtitle">SEMPORNA · SABAH · MALAYSIA</p>
+  <div class="badge-row">
+    <span class="badge">📅 2026.8.17 — 8.21</span>
+    <span class="badge">👥 2 人出行</span>
+    <span class="badge">✈️ 上海浦东 ⇄ 斗湖</span>
+    <span class="badge">💰 CNY 14,000</span>
+    <span class="badge">🏊 适中节奏</span>
+  </div>
+</section>
+
+<div class="wave-divider"></div>
+
+<div class="container">
+
+  <!-- WEATHER -->
+  <h2 class="section-title"><span class="icon">🌤️</span> 天气预估</h2>
+  <div class="card" style="padding:0; overflow:hidden;">
+    <table>
+      <thead>
+        <tr><th>日期</th><th>星期</th><th>温度</th><th>降雨</th><th>活动建议</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>8/17</td><td>周一</td><td>25-35°C</td><td class="rain-high">高</td><td>抵达日，室内为主</td></tr>
+        <tr><td>8/18</td><td>周二</td><td>25-35°C</td><td class="rain-high">高</td><td>上午出海，午后注意阵雨</td></tr>
+        <tr><td>8/19</td><td>周三</td><td>25-35°C</td><td class="rain-high">高</td><td>上午登山，下午浮潜</td></tr>
+        <tr><td>8/20</td><td>周四</td><td>25-35°C</td><td class="rain-high">高</td><td>全天出海跳岛</td></tr>
+        <tr><td>8/21</td><td>周五</td><td>25-35°C</td><td class="rain-high">高</td><td>返程日</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:13px; color:var(--text-light); margin-top:8px;">⚠️ 8 月为雨季尾声，多为短时热带阵雨，不影响出海活动。建议每天 8:00-9:00 出发。</p>
+
+  <!-- DAY-BY-DAY ITINERARY -->
+  <h2 class="section-title"><span class="icon">📅</span> 每日行程</h2>
+
+  <!-- DAY 1 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-num">1</div>
+      <div class="day-info">
+        <div class="day-date">8月17日 · 周一</div>
+        <div class="day-title">上海 → 吉隆坡 → 斗湖 → 仙本那</div>
+      </div>
+      <span class="day-route">✈️ PVG 02:10 → TWU 17:30 · 中转 KL 6h50m</span>
+    </div>
+    <div class="day-body">
+      <p style="font-size:13px; color:var(--accent); margin-bottom:10px;">⚠️ 凌晨航班，需 <strong>8/16 晚</strong> 前往浦东机场 T2，预留充足值机时间</p>
+      <ul class="timeline">
+        <li>
+          <span class="time" style="background:var(--coral); color:#fff; font-weight:700;">🔔 登机 01:30</span>
+          <span class="desc"><strong>🛫 上海浦东 T2 登机</strong><br><span class="note">国际航班提前 40 分钟关闭舱门。务必 8/16 晚抵达机场</span></span>
+        </li>
+        <li>
+          <span class="time">02:10</span>
+          <span class="desc"><strong>上海浦东 T2 起飞</strong><br><span class="note">经济舱 · 托运 25kg + 手提 1 件 · ¥2,997/人</span></span>
+        </li>
+        <li>
+          <span class="time">07:00</span>
+          <span class="desc"><strong>抵达吉隆坡 KLIA，办理入境</strong><br><span class="note">飞行约 5h，中国公民免签入境。吉隆坡是进入马来西亚第一站，在此办理入境手续后再转国内航班去斗湖</span></span>
+        </li>
+        <li>
+          <span class="time">08:00</span>
+          <span class="desc"><strong>🍵 华阳茶室 Oriental Kopi · 南洋早茶</strong><br><span class="note">KLIA 机场主楼内，清晨 4:30 即营业，转机客友好。必点三宝：酥皮蛋塔 + 华阳咖啡 + 冰火菠萝包。还有海南鸡饭、咖椰牛油吐司、槟城炒粿条。人均 RM 20-35</span></span>
+        </li>
+        <li>
+          <span class="time" style="background:var(--coral); color:#fff; font-weight:700;">🔔 登机 13:10</span>
+          <span class="desc"><strong>🛫 KLIA → 斗湖 TWU 登机</strong><br><span class="note">国内航班提前 40 分钟登机。行李直挂，无需重新托运</span></span>
+        </li>
+        <li>
+          <span class="time">13:50</span>
+          <span class="desc"><strong>吉隆坡 KLIA 起飞</strong><br><span class="note">飞行约 3h，留意登机口信息</span></span>
+        </li>
+        <li>
+          <span class="time">17:30</span>
+          <span class="desc"><strong>抵达斗湖机场 TWU</strong><br><span class="note">总航程 15h20m，提前预订接机</span></span>
+        </li>
+        <li>
+          <span class="time">约 1h</span>
+          <span class="desc"><strong>机场接驳至仙本那镇</strong><br><span class="note">拼车约 RM 25-35/人</span></span>
+        </li>
+        <li>
+          <span class="time">19:00</span>
+          <span class="desc"><strong>入住仙本那灯塔酒店，休整</strong><br><span class="note">标准大床房 ¥497/晚，镇上核心位置，近码头</span></span>
+        </li>
+        <li>
+          <span class="time">晚餐</span>
+          <span class="desc"><strong>肥妈海鲜楼 / 天旺海鲜楼</strong><br><span class="note">招牌：手臂皮皮虾、老虎虾、石头鱼，人均 RM 50-80</span></span>
+        </li>
+        <li>
+          <span class="time">晚间</span>
+          <span class="desc"><strong>逛仙本那码头夜市，携程预订次日跳岛游</strong><br><span class="note">携程App搜索「敦沙卡兰一日游」，4.8分 ⭐ 150条评价，中文导游，当晚23:50前下单即可</span></span>
+        </li>
+      </ul>
+      <canvas class="route-canvas" id="canvas-day1" width="440" height="200"></canvas>
+      <p class="map-note">🗺️ 斗湖机场 → 仙本那灯塔酒店（公路约 70km，车程约 1h）</p>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-num">2</div>
+      <div class="day-info">
+        <div class="day-date">8月18日 · 周二</div>
+        <div class="day-title">敦沙卡兰一日游 · 可选登山</div>
+      </div>
+      <span class="day-route">🛶 珍珠岛 → 曼达布安浮潜 → 军舰岛 · 携程优选</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li>
+          <span class="time">9:00</span>
+          <span class="desc"><strong>码头集合出发</strong><br><span class="note">无购物·睡饱出发，中文导游，赠送透明玻璃船拍照</span></span>
+        </li>
+        <li>
+          <span class="time">上午·可选</span>
+          <span class="desc"><strong>⛰️ 珍珠岛登山 353m 俯瞰双色海全景</strong><br><span class="note">含爬山：+¥132/人（¥406起），不含爬山：¥274起，其余行程相同（曼达布安浮潜+军舰岛+午餐+玻璃船）</span></span>
+        </li>
+        <li>
+          <span class="time">中午</span>
+          <span class="desc"><strong>船上简餐</strong></span>
+        </li>
+        <li>
+          <span class="time">下午</span>
+          <span class="desc"><strong>曼达布安岛 — 浮潜</strong><br><span class="note">珊瑚与鱼群丰富，浮潜性价比之王</span></span>
+        </li>
+        <li>
+          <span class="time">下午</span>
+          <span class="desc"><strong>军舰岛 — 细长沙滩 + 椰林拍照</strong><br><span class="note">经典拖尾沙滩，白色长沙滩 + 椰林树影，出片率 100%</span></span>
+        </li>
+        <li>
+          <span class="time">16:00-17:00</span>
+          <span class="desc"><strong>返回码头</strong></span>
+        </li>
+        <li>
+          <span class="time">晚餐</span>
+          <span class="desc"><strong>仙本那镇上夜市 / 海鲜餐厅</strong></span>
+        </li>
+      </ul>
+      <canvas class="route-canvas" id="canvas-day2" width="440" height="200"></canvas>
+      <p class="map-note">🗺️ 跳岛路线：码头 → 珍珠岛（登山）→ 曼达布安（浮潜）→ 军舰岛（拖尾沙滩）</p>
+      <p style="margin-top:12px; font-size:13px; color:var(--text-light);">💰 携程一日游：含爬山 ¥406起 / 不含爬山 ¥274起 · 4.8分 ⭐ 仙本那一日游热卖NO.1</p>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-num">3</div>
+      <div class="day-info">
+        <div class="day-date">8月19日 · 周三</div>
+        <div class="day-title">水屋浮潜日</div>
+      </div>
+      <span class="day-route">🏝️ 上午自由活动 · 下午入住珊瑚海水屋 · 水屋浮潜</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li>
+          <span class="time">上午</span>
+          <span class="desc"><strong>酒店退房（行李暂存前台）</strong><br><span class="note">镇上最后一顿早餐，闲逛买手信、喝杯咖啡</span></span>
+        </li>
+        <li>
+          <span class="time">12:00-14:00</span>
+          <span class="desc"><strong>码头出发 → 珊瑚海水屋</strong><br><span class="note">乘船约12分钟，上岛办理入住</span></span>
+        </li>
+        <li>
+          <span class="time">下午</span>
+          <span class="desc"><strong>🤿 水屋周边浮潜 · 推门即海</strong><br><span class="note">免费浮潜装备 + 玻璃船 + 桨板，浅滩珊瑚鱼群众多</span></span>
+        </li>
+        <li>
+          <span class="time">傍晚</span>
+          <span class="desc"><strong>🎣 海钓体验（水屋免费提供）</strong><br><span class="note">水屋提供免费海钓装备，钓上的鱼可加工当晚餐</span></span>
+        </li>
+        <li>
+          <span class="time">晚餐</span>
+          <span class="desc"><strong>🍤 水屋海鲜晚餐（自付）</strong><br><span class="note">单点海鲜晚餐，水屋观日落享海鲜晚宴</span></span>
+        </li>
+      </ul>
+      <canvas class="route-canvas" id="canvas-day3" width="440" height="200"></canvas>
+      <p class="map-note">🗺️ 灯塔酒店 → 仙本那码头 → 珊瑚海水屋（船程约 12 分钟）</p>
+      <p style="margin-top:12px; font-size:13px; color:var(--text-light);">💰 水屋 ¥2,400/人 · 含接送+早午餐+浮潜+玻璃船+海钓+桨板，晚餐自付（8月旺季价）</p>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-num">4</div>
+      <div class="day-info">
+        <div class="day-date">8月20日 · 周四</div>
+        <div class="day-title">海钓 + 岛上度假</div>
+      </div>
+      <span class="day-route">🎣 水屋退房 · 海钓半日 · 返回镇上休闲</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li>
+          <span class="time">上午</span>
+          <span class="desc"><strong>水屋早餐 + 清晨浮潜</strong><br><span class="note">退房前最后享受推门即海的早晨，光线绝佳拍照</span></span>
+        </li>
+        <li>
+          <span class="time">10:30</span>
+          <span class="desc"><strong>水屋退房 → 返回仙本那码头</strong><br><span class="note">乘船约12分钟，入住灯塔酒店（标准大床房 ¥497/晚）</span></span>
+        </li>
+        <li>
+          <span class="time">11:00-15:00</span>
+          <span class="desc"><strong>🎣 出海海钓半日</strong><br><span class="note">仙本那海钓体验约 4h，石斑、红鲷、东星斑常见，渔获可带回镇上加工</span></span>
+        </li>
+        <li>
+          <span class="time">下午</span>
+          <span class="desc"><strong>镇上自由休闲</strong><br><span class="note">海鲜市场逛渔获、咖啡馆发呆、按摩放松，享受仙本那慢时光</span></span>
+        </li>
+        <li>
+          <span class="time">傍晚</span>
+          <span class="desc"><strong>日落观景</strong><br><span class="note">码头观日落，提前整理行李为次日返程做准备</span></span>
+        </li>
+        <li>
+          <span class="time">晚餐</span>
+          <span class="desc"><strong>最后一晚海鲜大餐</strong><br><span class="note">海钓渔获加工 + 镇上餐厅，犒劳这次旅行</span></span>
+        </li>
+      </ul>
+      <canvas class="route-canvas" id="canvas-day4" width="440" height="200"></canvas>
+      <p class="map-note">🗺️ 珊瑚海水屋 → 近海海钓区 → 仙本那码头 → 灯塔酒店</p>
+      <p style="margin-top:12px; font-size:13px; color:var(--text-light);">💰 海钓体验约 RM 150-200/人（4h） | 🏨 Day 4 晚上住镇上酒店（RM 100-180/晚）</p>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-num">5</div>
+      <div class="day-info">
+        <div class="day-date">8月21日 · 周五</div>
+        <div class="day-title">斗湖 → 吉隆坡 → 上海</div>
+      </div>
+      <span class="day-route">✈️ TWU 11:00 → PVG 01:10+1 · 中转 KL 5h45m · 🕌 粉红清真寺</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li>
+          <span class="time">7:00</span>
+          <span class="desc"><strong>早起退房，早餐</strong><br><span class="note">提前一天确认接机车辆</span></span>
+        </li>
+        <li>
+          <span class="time">8:00</span>
+          <span class="desc"><strong>出发前往斗湖机场</strong><br><span class="note">车程约 1h，9:00 前到机场办理值机</span></span>
+        </li>
+        <li>
+          <span class="time" style="background:var(--coral); color:#fff; font-weight:700;">🔔 登机 10:20</span>
+          <span class="desc"><strong>🛫 斗湖 TWU 登机</strong><br><span class="note">国内航班提前 40 分钟登机。托运行李 25kg + 手提 1 件</span></span>
+        </li>
+        <li>
+          <span class="time">11:00</span>
+          <span class="desc"><strong>斗湖机场起飞</strong><br><span class="note">飞往吉隆坡，飞行约 3h</span></span>
+        </li>
+        <li>
+          <span class="time">14:00</span>
+          <span class="desc"><strong>抵达吉隆坡 KLIA</strong><br><span class="note">飞行约 3h，行李直挂上海无需提取。出机场前往布城（Putrajaya）</span></span>
+        </li>
+        <li>
+          <span class="time">14:30</span>
+          <span class="desc"><strong>KLIA Transit → 布城</strong><br><span class="note">机场快线约 20 分钟到 Putrajaya Sentral（RM 9.40），再 Grab 打车 10 分钟到粉红清真寺（约 RM 8-12）</span></span>
+        </li>
+        <li>
+          <span class="time">15:00-16:30</span>
+          <span class="desc"><strong>🕌 粉红清真寺 Putra Mosque + 布城广场</strong><br><span class="note">东南亚最大水上清真寺，玫瑰大理石建造，粉色穹顶 + 湖中倒影是吉隆坡名片。免费参观，提供长袍。非穆斯林可在非祷告时段入内。对面布城广场湖边是最佳拍照机位，广角把穹顶和倒影一起框入</span></span>
+        </li>
+        <li>
+          <span class="time">16:30</span>
+          <span class="desc"><strong>返回 KLIA</strong><br><span class="note">Grab + KLIA Transit 原路返回，约 17:00 到机场。预留 2h+ 办理国际出发手续</span></span>
+        </li>
+        <li>
+          <span class="time" style="background:var(--coral); color:#fff; font-weight:700;">🔔 登机 18:50</span>
+          <span class="desc"><strong>🛫 KLIA → 上海浦东 PVG 登机</strong><br><span class="note">国际航班提前 45 分钟登机。行李直挂上海，免税店采购后及时前往登机口</span></span>
+        </li>
+        <li>
+          <span class="time">19:35</span>
+          <span class="desc"><strong>吉隆坡 KLIA 起飞</strong><br><span class="note">飞行约 5h，次日凌晨抵达上海</span></span>
+        </li>
+        <li>
+          <span class="time">01:10+1</span>
+          <span class="desc"><strong>抵达上海浦东 T2</strong><br><span class="note">总航程 14h10m，提前安排接机或地铁</span></span>
+        </li>
+      </ul>
+      <canvas class="route-canvas" id="canvas-day5" width="440" height="200"></canvas>
+      <p class="map-note">🗺️ 返程路线：仙本那 → 斗湖 → 吉隆坡 → 布城粉红清真寺 → 上海浦东 PVG</p>
+    </div>
+  </div>
+
+  <!-- BUDGET -->
+  <h2 class="section-title"><span class="icon">💰</span> 预算明细</h2>
+  <div class="card" style="padding:0; overflow:hidden;">
+    <table class="budget-table">
+      <thead>
+        <tr><th>类别</th><th>预估金额</th><th>占比</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>✈️ 机票</td><td>5,994 CNY</td><td>35-40%</td><td>2 人往返，上海浦东 ⇄ 斗湖（吉隆坡中转）· ¥2,997/人</td></tr>
+        <tr><td>🏨 住宿（4晚）</td><td>6,291 CNY</td><td>32-36%</td><td>3 晚灯塔酒店 ¥497/晚（17/18/20日）+ 1 晚珊瑚海水屋 ¥2,400/人（19日）</td></tr>
+        <tr><td>🚤 跳岛游（Day 2）</td><td>812 CNY</td><td>5%</td><td>携程敦沙卡兰一日游（含登山）¥406/人 × 2 人</td></tr>
+        <tr><td>🎣 海钓体验</td><td>300-400 CNY</td><td>2%</td><td>Day 4 海钓半日 RM 150-200/人 × 2</td></tr>
+        <tr><td>🍽️ 餐饮（5天）</td><td>1,600-2,400 CNY</td><td>12-15%</td><td>含海鲜大餐，2 人日均 RM 120-160</td></tr>
+        <tr><td>🚗 交通</td><td>500-800 CNY</td><td>5%</td><td>机场接送 + 镇上出行</td></tr>
+        <tr><td>🛍️ 购物/杂项</td><td>800-1,400 CNY</td><td>8%</td><td>手信、上岛费、小费等</td></tr>
+        <tr class="total-row"><td>💵 合计</td><td>16,000-18,000 CNY</td><td>100%</td><td>含水屋+海钓+灯塔酒店，中档预算约 16,000-18,000 CNY</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOD -->
+  <h2 class="section-title"><span class="icon">🍽️</span> 美食推荐</h2>
+  <div class="card" style="padding:0; overflow:hidden;">
+    <table>
+      <thead>
+        <tr><th>餐厅</th><th>招牌菜</th><th>人均</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>肥妈海鲜楼</td><td>手臂皮皮虾、老虎虾、咸蛋黄炒蟹</td><td>RM 50-80</td></tr>
+        <tr><td>天旺海鲜楼</td><td>石头鱼、龙虾、奶油虾</td><td>RM 50-70</td></tr>
+        <tr><td>海中宝</td><td>海鲜火锅</td><td>RM 40-60</td></tr>
+        <tr><td>镇上夜市</td><td>烤鱼、沙爹、ABC 冰</td><td>RM 15-25</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TIPS -->
+  <h2 class="section-title"><span class="icon">⚠️</span> 重要提示</h2>
+  <div class="tips-grid">
+    <div class="tip-box warn">
+      <h4>✈️ 航班须知</h4>
+      <p>去程凌晨 02:10 上海浦东起飞，<strong>8/16 晚</strong>务必前往浦东 T2。中转吉隆坡行李直达，无需提取。返程 8/22 凌晨 01:10 抵达上海。</p>
+    </div>
+    <div class="tip-box warn">
+      <h4>⛰️ 珍珠岛登山</h4>
+      <p>必须穿运动鞋/溯溪鞋，拖鞋凉鞋禁止登山！山路为热带雨林原始路径，较泥泞；带足饮用水。</p>
+    </div>
+    <div class="tip-box info">
+      <h4>🛡️ 安全备忘</h4>
+      <p>护照和贵重物品可寄存酒店再出海。购买含潜水保障的旅行保险。尊重巴瑶族文化，拍照前征得同意。</p>
+    </div>
+    <div class="tip-box info">
+      <h4>📶 通讯</h4>
+      <p>镇上信号良好，出海多数区域无信号。建议提前下载离线地图，购买 Celcom/Digi 电话卡。</p>
+    </div>
+    <div class="tip-box warn">
+      <h4>🏊 出海安全</h4>
+      <p>每天 8:00-9:00 码头集合，提前一天预订跳岛游。穿水母衣或长袖防晒，物理防晒比防晒霜有效。浮潜时勿触碰珊瑚。</p>
+    </div>
+    <div class="tip-box warn">
+      <h4>🛂 MDAC 电子入境卡</h4>
+      <p>中国公民入境马来西亚必须填写 MDAC（Malaysia Digital Arrival Card）。需在<strong>入境前 72 小时内</strong>（最早 8/14）在线填写，<strong>每人各填一份</strong>。详见下方 MDAC 操作指南。</p>
+    </div>
+  </div>
+
+  <!-- PACKING LIST -->
+  <h2 class="section-title"><span class="icon">🎒</span> 行李打包清单（2 人份）</h2>
+
+  <div class="card">
+    <h3 style="color:var(--ocean-deep); font-size:16px; margin-bottom:10px;">📄 证件文件</h3>
+    <ul class="checklist">
+      <li>护照（有效期 6 个月以上，检查空白页）</li>
+      <li><strong>MDAC 电子入境卡确认件</strong>（打印 + 手机截图）</li>
+      <li>机票行程单（打印 + 电子版备份）</li>
+      <li>酒店预订确认单</li>
+      <li>旅行保险单（含潜水医疗保障）</li>
+      <li>银行卡 / 信用卡（提前通知银行境外使用）</li>
+      <li>现金令吉 RM 2,000-3,000 + 备用人民币</li>
+      <li>紧急联系人清单（含中国驻马来西亚使馆电话）</li>
+      <li>所有证件云端 + 纸质备份各一份</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--ocean-deep); font-size:16px; margin-bottom:10px;">🔌 电子设备</h3>
+    <ul class="checklist">
+      <li>手机 + 充电器（开通国际漫游）</li>
+      <li>充电宝（10,000mAh 以上，每人 1 个）</li>
+      <li>英标转换插头（马来西亚 G 型三孔 ×2 个）</li>
+      <li>排插 / 多口 USB 充电器</li>
+      <li>水下相机 / GoPro + 备用电池 + 存储卡</li>
+      <li>防水手机袋（出海必备）</li>
+      <li>耳机（降噪款推荐，长途飞行用）</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--ocean-deep); font-size:16px; margin-bottom:10px;">🧴 个人护理</h3>
+    <ul class="checklist">
+      <li>防晒霜 SPF 50+（珊瑚友好型 / 物理防晒）</li>
+      <li>晒后修复芦荟胶</li>
+      <li>牙刷 + 牙膏</li>
+      <li>洗面奶 + 保湿乳液</li>
+      <li>洗发水 + 沐浴露（旅行装）</li>
+      <li>防蚊液（含 DEET 或派卡瑞丁）</li>
+      <li>晕船药（Dimenhydrinate，出海前 30 分钟服用）</li>
+      <li>个人常用药 + 感冒药 + 止泻药 + 创可贴</li>
+      <li>隐形眼镜 + 药水（海水不友好）</li>
+      <li>唇膏（带 SPF）</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--ocean-deep); font-size:16px; margin-bottom:10px;">👕 衣物（每人份）</h3>
+    <ul class="checklist">
+      <li>轻便 T 恤 × 5-7 件</li>
+      <li>背心 / 吊带 × 2-3 件</li>
+      <li>短裤 × 3-4 条</li>
+      <li>长裤 / 薄长裙 × 1-2 条</li>
+      <li>内衣 × 7 套</li>
+      <li>袜子 × 4-5 双</li>
+      <li>睡衣</li>
+      <li>轻薄防晒外套 / 衬衫</li>
+      <li>轻便雨衣 / 皮肤衣（热带阵雨）</li>
+      <li>运动鞋（珍珠岛登山必备，禁止拖鞋）</li>
+      <li>人字拖 / 凉鞋</li>
+      <li>溯溪鞋 / 潜水袜（珊瑚保护 + 防割伤）</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--ocean-deep); font-size:16px; margin-bottom:10px;">🏊 潜水 & 出海装备</h3>
+    <ul class="checklist">
+      <li>泳衣 / 泳裤 × 2 套（每人）</li>
+      <li>水母衣 / 长袖防晒衣（物理防晒优于防晒霜）</li>
+      <li>浮潜面镜 + 呼吸管（建议自带，卫生 + 合脸）</li>
+      <li>速干毛巾（每人 1 条）</li>
+      <li>防水背包 / 防水袋（出海装随身物品）</li>
+      <li>潜水证（如有）</li>
+      <li>墨镜 + 遮阳帽</li>
+      <li>手机防水壳 / 挂绳</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--ocean-deep); font-size:16px; margin-bottom:10px;">💊 药品包</h3>
+    <ul class="checklist">
+      <li>晕船药（Dimenhydrinate，每人备 5-6 粒）</li>
+      <li>蒙脱石散 / 止泻药</li>
+      <li>抗过敏药（氯雷他定）</li>
+      <li>布洛芬 / 退烧药</li>
+      <li>碘伏棉签 + 创可贴 + 防水敷料</li>
+      <li>驱蚊液（热带必备）</li>
+      <li>眼药水（海水入眼后冲洗）</li>
+      <li>个人处方药（带医生英文说明）</li>
+    </ul>
+  </div>
+
+  <!-- MDAC -->
+  <h2 class="section-title"><span class="icon">🛂</span> MDAC 电子入境卡 · 填写指南</h2>
+  <div class="card">
+    <p style="margin-bottom:16px;">自 2024 年起，<strong>所有非马来西亚籍旅客</strong>（含中国免签公民）入境前必须在线填写 MDAC（Malaysia Digital Arrival Card），否则可能被拒绝入境。填写免费，每人各填一份。</p>
+
+    <div class="quick-facts" style="margin-bottom:20px;">
+      <div class="fact-item">
+        <div class="fact-icon">🌐</div>
+        <div class="fact-label">官网入口</div>
+        <div class="fact-value" style="font-size:12px; word-break:break-all;">imigresen-online.imi.gov.my/mdac/main</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">📅</div>
+        <div class="fact-label">填写时间</div>
+        <div class="fact-value">入境前 72h 内</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">💰</div>
+        <div class="fact-label">费用</div>
+        <div class="fact-value">免费 RM 0</div>
+      </div>
+      <div class="fact-item">
+        <div class="fact-icon">👥</div>
+        <div class="fact-label">份数</div>
+        <div class="fact-value">每人 1 份，共 2 份</div>
+      </div>
+    </div>
+
+    <h4 style="color:var(--ocean-deep); margin:20px 0 12px;">📝 填写步骤（5 步，约 5 分钟/人）</h4>
+    <table style="margin-bottom:16px;">
+      <thead><tr><th style="width:60px;">步骤</th><th>操作</th><th>注意事项</th></tr></thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center; font-weight:700;">1</td>
+          <td>打开官网<br><span style="font-size:12px; color:var(--ocean-mid);">imigresen-online.imi.gov.my/mdac/main</span></td>
+          <td>手机/电脑均可，建议用 Chrome 浏览器</td>
+        </tr>
+        <tr>
+          <td style="text-align:center; font-weight:700;">2</td>
+          <td>填写个人信息<br>姓名、护照号、出生日期、性别、国籍（CHINA）、护照有效期</td>
+          <td>姓名必须与护照完全一致（拼音），护照有效期需晚于返程日期 6 个月以上</td>
+        </tr>
+        <tr>
+          <td style="text-align:center; font-weight:700;">3</td>
+          <td>填写行程信息<br>抵达日期：17/08/2026、离境日期：21/08/2026、交通方式：AIR、最后登机国：CHINA</td>
+          <td>日期格式 DD/MM/YYYY，离境日期填返程航班日期</td>
+        </tr>
+        <tr>
+          <td style="text-align:center; font-weight:700;">4</td>
+          <td>填写住宿信息<br>酒店名称、地址、城市、邮编（英文）</td>
+          <td>仅填第一晚住宿即可，多酒店不用全填</td>
+        </tr>
+        <tr>
+          <td style="text-align:center; font-weight:700;">5</td>
+          <td>核对提交 → 保存二维码<br>检查所有信息与护照一致 → 提交 → 下载 PDF + 截图二维码</td>
+          <td>二维码即时生成，同时发送到邮箱。务必打印 PDF + 手机截图双备份</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box info" style="margin-top:12px;">
+      <h4>⚠️ MDAC 避坑提醒</h4>
+      <ul style="padding-left:18px; font-size:13px; line-height:1.8;">
+        <li>不要用第三方代填网站，<strong>只走官方入口</strong>，免费。</li>
+        <li>入境机场选 <strong>斗湖（Tawau / TWU）</strong>，不是吉隆坡。</li>
+        <li>如果填错了可以重新提交，以最新一份为准。</li>
+        <li>中国公民免签 30 天（截至 2026.12.31），不需要额外办签证。</li>
+        <li>入境时需同时出示：护照 + MDAC 二维码 + 返程机票 + 酒店预订单。</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:16px; font-size:14px; color:var(--text-light);">
+      📌 <strong>执行提醒：8 月 14 日（周四）</strong>即可开始填写 MDAC，两人各填一份。8/16 晚出发前务必完成并打印。
+    </p>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  const COLORS = {
+    ocean:   '#a8d8ea',
+    oceanBg: '#dceef3',
+    land:    '#f5e6d3',
+    coast:   '#c9b896',
+    point:   '#1a5276',
+    coral:   '#e74c3c',
+    gold:    '#f39c12',
+    route:   '#2980b9',
+    white:   '#ffffff',
+    shadow:  'rgba(0,0,0,0.15)'
+  };
+
+  function draw(canvasId, drawFn) {
+    const c = document.getElementById(canvasId);
+    if (!c) return;
+    const ctx = c.getContext('2d');
+    const W = 440, H = 200;
+    c.width = W; c.height = H;
+    // ocean gradient background
+    const bg = ctx.createLinearGradient(0,0,0,H);
+    bg.addColorStop(0, COLORS.oceanBg);
+    bg.addColorStop(0.55, '#c5e3ee');
+    bg.addColorStop(1, '#9ac7d9');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0,0,W,H);
+    drawFn(ctx, W, H);
+  }
+
+  // ─── helpers ───
+  function label(ctx, x, y, text, color, size, align) {
+    ctx.fillStyle = color || COLORS.point;
+    ctx.font = (size || 12) + 'px "PingFang SC","Microsoft YaHei",sans-serif';
+    ctx.textAlign = align || 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(text, x, y);
+  }
+
+  function pin(ctx, x, y, r, fill, stroke) {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI*2);
+    ctx.fillStyle = fill || COLORS.point;
+    ctx.fill();
+    ctx.strokeStyle = stroke || COLORS.white;
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+  }
+
+  function arrow(ctx, x1, y1, x2, y2, color, dash) {
+    ctx.save();
+    ctx.strokeStyle = color || COLORS.route;
+    ctx.lineWidth = 2.5;
+    if (dash) ctx.setLineDash([6,4]);
+    else ctx.setLineDash([]);
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+    ctx.restore();
+    // arrowhead
+    const ang = Math.atan2(y2-y1, x2-x1);
+    const len = 10;
+    ctx.save();
+    ctx.translate(x2, y2);
+    ctx.rotate(ang);
+    ctx.fillStyle = color || COLORS.route;
+    ctx.beginPath();
+    ctx.moveTo(0,0);
+    ctx.lineTo(-len, -len*0.45);
+    ctx.lineTo(-len, len*0.45);
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function coastline(ctx, yBase, W) {
+    ctx.beginPath();
+    ctx.moveTo(0, yBase+12);
+    for (let x=0; x<=W; x+=20) {
+      ctx.lineTo(x, yBase + Math.sin(x*0.03)*6 + Math.sin(x*0.07)*4);
+    }
+    ctx.lineTo(W, yBase+25);
+    ctx.lineTo(0, yBase+25);
+    ctx.closePath();
+    ctx.fillStyle = COLORS.land;
+    ctx.fill();
+    ctx.strokeStyle = COLORS.coast;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+  }
+
+  // ══════════════════════════════════════
+  //  DAY 1: Tawau Airport → Semporna Town
+  // ══════════════════════════════════════
+  draw('canvas-day1', function(ctx, W, H) {
+    // coastline
+    coastline(ctx, 130, W);
+    // inland area
+    ctx.fillStyle = COLORS.land;
+    ctx.fillRect(0,140,W,60);
+    ctx.strokeStyle = COLORS.coast;
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(0,140,W,60);
+
+    // Tawau Airport (left)
+    pin(ctx, 65, 100, 10, COLORS.point);
+    label(ctx, 65, 75, '斗湖机场 TWU', COLORS.point, 12);
+    label(ctx, 65, 122, '机场', COLORS.point, 10);
+
+    // Semporna (right)
+    pin(ctx, 375, 100, 10, COLORS.coral);
+    label(ctx, 375, 75, '仙本那镇', COLORS.coral, 12);
+
+    // route
+    arrow(ctx, 78, 100, 362, 100, COLORS.route, false);
+    label(ctx, 220, 88, '~70 km  公路 · 约 1h', '#555', 11);
+
+    // direction note
+    label(ctx, 220, 30, '西  ▸  东', '#7f8c8d', 11);
+  });
+
+  // ══════════════════════════════════════
+  //  DAY 2: Island Hopping Loop
+  // ══════════════════════════════════════
+  draw('canvas-day2', function(ctx, W, H) {
+    // ocean fills whole canvas (already gradient)
+    coastline(ctx, 155, W);
+
+    // Wharf
+    pin(ctx, 220, 170, 9, COLORS.point);
+    label(ctx, 220, 185, '码头', COLORS.point, 11);
+
+    // Pearl Island  Bohey Dulang
+    pin(ctx, 300, 55, 10, COLORS.gold);
+    label(ctx, 300, 40, '珍珠岛', COLORS.gold, 12);
+    label(ctx, 300, 72, 'Bohey Dulang', '#888', 9);
+
+    // Mantabuan
+    pin(ctx, 375, 70, 8, COLORS.route);
+    label(ctx, 375, 55, '曼达布安', COLORS.route, 11);
+
+    // Sibuan
+    pin(ctx, 100, 60, 10, COLORS.coral);
+    label(ctx, 100, 44, '军舰岛', COLORS.coral, 12);
+
+    // route: wharf → Pearl → Mantabuan → Sibuan
+    arrow(ctx, 220, 160, 300, 65, COLORS.route, true);
+    label(ctx, 265, 125, '~25km', '#7f8c8d', 10);
+
+    arrow(ctx, 308, 65, 367, 70, COLORS.route, true);
+    label(ctx, 340, 58, '~3km', '#7f8c8d', 9);
+
+    arrow(ctx, 365, 80, 110, 60, COLORS.route, true);
+    label(ctx, 250, 45, '~20km', '#7f8c8d', 10);
+
+    // title
+    label(ctx, 220, 18, '逆时针跳岛环线', '#555', 11);
+  });
+
+  // ══════════════════════════════════════
+  //  DAY 3: Hotel → Wharf → Water House
+  // ══════════════════════════════════════
+  draw('canvas-day3', function(ctx, W, H) {
+    coastline(ctx, 140, W);
+
+    // Lighthouse Hotel (inland)
+    pin(ctx, 70, 165, 10, COLORS.point);
+    label(ctx, 70, 148, '灯塔酒店', COLORS.point, 11);
+
+    // Wharf
+    pin(ctx, 220, 135, 8, COLORS.route);
+    label(ctx, 220, 120, '码头', COLORS.route, 10);
+
+    // Coral Water House (offshore)
+    pin(ctx, 370, 65, 11, COLORS.coral);
+    label(ctx, 370, 48, '珊瑚海水屋', COLORS.coral, 12);
+    label(ctx, 370, 82, '~12min 船程', '#888', 9);
+
+    // routes
+    arrow(ctx, 83, 163, 210, 138, '#b0b0b0', true);
+    label(ctx, 155, 155, '步行/打车', '#999', 9);
+
+    arrow(ctx, 230, 130, 358, 72, COLORS.route, true);
+    label(ctx, 305, 112, '~3km  船 12min', '#7f8c8d', 10);
+
+    // ocean label
+    label(ctx, 370, 30, '近海', '#7f8c8d', 10);
+  });
+
+  // ══════════════════════════════════════
+  //  DAY 4: Water House → Fishing → Wharf → Hotel
+  // ══════════════════════════════════════
+  draw('canvas-day4', function(ctx, W, H) {
+    coastline(ctx, 150, W);
+
+    // Water House (offshore)
+    pin(ctx, 370, 50, 10, COLORS.point);
+    label(ctx, 370, 35, '珊瑚海水屋', COLORS.point, 11);
+
+    // Fishing zone
+    pin(ctx, 290, 85, 8, COLORS.gold);
+    label(ctx, 290, 70, '海钓区', COLORS.gold, 11);
+
+    // Wharf
+    pin(ctx, 200, 145, 8, COLORS.route);
+    label(ctx, 200, 130, '码头', COLORS.route, 10);
+
+    // Lighthouse Hotel
+    pin(ctx, 70, 170, 10, COLORS.coral);
+    label(ctx, 70, 154, '灯塔酒店', COLORS.coral, 11);
+
+    // routes
+    arrow(ctx, 360, 60, 298, 82, COLORS.route, true);
+    label(ctx, 335, 68, '出海', '#7f8c8d', 9);
+
+    arrow(ctx, 280, 95, 210, 138, COLORS.route, true);
+    label(ctx, 250, 120, '返回', '#7f8c8d', 9);
+
+    arrow(ctx, 188, 148, 82, 166, '#b0b0b0', true);
+    label(ctx, 145, 160, '步行', '#999', 9);
+
+    label(ctx, 220, 22, '水屋 → 海钓 → 返程', '#555', 11);
+  });
+
+  // ══════════════════════════════════════
+  //  DAY 5: Return Journey Panorama
+  // ══════════════════════════════════════
+  draw('canvas-day5', function(ctx, W, H) {
+    // simplified world map feel — thin coast line at bottom
+    coastline(ctx, 175, W);
+
+    // Semporna
+    pin(ctx, 35, 165, 8, COLORS.point);
+    label(ctx, 35, 150, '仙本那', COLORS.point, 10);
+
+    // TWU
+    pin(ctx, 105, 165, 7, COLORS.route);
+    label(ctx, 105, 150, '斗湖 TWU', COLORS.route, 10);
+
+    // flight path TWU → KL
+    const twuX=110, twuY=160, klX=260, klY=60;
+    arrow(ctx, twuX, twuY, klX, klY, COLORS.route, true);
+    label(ctx, 190, 115, '🛫 飞行约 3h', '#7f8c8d', 10);
+
+    // KLIA
+    pin(ctx, 260, 60, 9, COLORS.coral);
+    label(ctx, 260, 45, '吉隆坡 KLIA', COLORS.coral, 11);
+
+    // Putra Mosque
+    pin(ctx, 335, 42, 8, COLORS.gold);
+    label(ctx, 335, 28, '布城清真寺', COLORS.gold, 11);
+
+    arrow(ctx, 270, 55, 325, 46, COLORS.gold, true);
+    label(ctx, 305, 55, 'KLIA Transit', '#999', 8);
+
+    // flight KL → Shanghai
+    arrow(ctx, 345, 38, 425, 22, COLORS.route, true);
+    label(ctx, 395, 38, '🛫 5h', '#7f8c8d', 10);
+
+    // Shanghai
+    pin(ctx, 428, 22, 9, COLORS.coral);
+    label(ctx, 428, 8, '浦东 PVG', COLORS.coral, 11);
+
+    label(ctx, 220, 85, '全景返程 · 总航程约 14h', '#555', 11);
+
+    // distance labels
+    label(ctx, 70, 180, '~70km 公路', '#aaa', 9);
+    label(ctx, 325, 170, '马来西亚', '#aaa', 9);
+  });
+
+})();
+</script>
+
+<div class="footer">
+  仙本那 5 天旅行计划 · 2026.8.17-8.21 · Travel Butler 旅行智能管家
+</div>
+
+</body>
+</html>
