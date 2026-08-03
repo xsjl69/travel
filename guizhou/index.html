@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>荔波小七孔 5 天旅行计划 | 2026.8.14-8.18</title>
+<style>
+  :root {
+    --deep: #0d4f3c;
+    --mid: #1a7a5a;
+    --light: #3cb878;
+    --aqua: #5cd6a8;
+    --cream: #faf8f3;
+    --gold: #c4962a;
+    --text: #2d3436;
+    --text-light: #636e72;
+    --white: #ffffff;
+    --card: rgba(255,255,255,0.94);
+    --shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(180deg, #e0f2e9 0%, #faf8f3 25%, #dcf5ec 100%);
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  .hero {
+    background: linear-gradient(160deg, #0d4f3c 0%, #156b4a 35%, #1a7a5a 65%, #208b62 100%);
+    color: var(--white);
+    padding: 72px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -15%;
+    width: 130%; height: 180%;
+    background: radial-gradient(ellipse at 25% 65%, rgba(92,214,168,0.12) 0%, transparent 55%),
+                radial-gradient(ellipse at 75% 35%, rgba(196,150,42,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .hero .subtitle {
+    font-size: 17px;
+    opacity: 0.88;
+    position: relative;
+    letter-spacing: 1px;
+  }
+  .hero .badge-row {
+    display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;
+    margin-top: 24px; position: relative;
+  }
+  .hero .badge {
+    background: rgba(255,255,255,0.14);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 24px;
+    padding: 6px 20px;
+    font-size: 13px; letter-spacing: 1px;
+  }
+  .hero .badge.highlight {
+    background: rgba(60,184,120,0.3);
+    border-color: rgba(92,214,168,0.4);
+    font-weight: 600;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 24px 64px; position: relative; top: -24px; }
+
+  .info-banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px; margin-bottom: 32px;
+  }
+  .info-card {
+    background: var(--card); border-radius: 14px;
+    padding: 18px 16px; text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .info-card .icon { font-size: 26px; margin-bottom: 6px; }
+  .info-card .label { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px; }
+  .info-card .value { font-size: 16px; font-weight: 700; color: var(--mid); margin-top: 2px; }
+
+  section {
+    background: var(--card); border-radius: 20px;
+    padding: 32px; margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  section h2 {
+    font-size: 21px; font-weight: 700; color: var(--deep);
+    margin-bottom: 20px; padding-bottom: 10px;
+    border-bottom: 2px solid #e4f0e8;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .hotel-card {
+    background: linear-gradient(135deg, #f0f7f2, #e8f4ec);
+    border-radius: 14px; padding: 20px 24px; margin-bottom: 24px;
+    border: 1px solid #c8e0cf;
+  }
+  .hotel-card h3 { font-size: 17px; color: var(--deep); margin-bottom: 4px; }
+  .hotel-card .hotel-meta { font-size: 13px; color: var(--text-light); margin-bottom: 10px; }
+
+  .train-timeline {
+    background: #f0f7f2; border-radius: 14px; padding: 24px 28px; margin-bottom: 24px;
+  }
+  .train-row {
+    display: grid; grid-template-columns: 80px 1fr 80px;
+    align-items: center; gap: 16px; padding: 10px 0;
+    border-bottom: 1px dashed #c8e0cf;
+  }
+  .train-row:last-child { border-bottom: none; }
+  .train-time { font-size: 18px; font-weight: 700; color: var(--deep); }
+  .train-station { font-size: 16px; font-weight: 600; }
+  .train-station small { font-weight: 400; color: var(--text-light); font-size: 12px; display: block; }
+
+  .day-card {
+    border-left: 4px solid var(--mid);
+    padding: 20px 24px; margin-bottom: 22px;
+    background: #f6faf7; border-radius: 0 14px 14px 0;
+    transition: border-color 0.2s;
+  }
+  .day-card:hover { border-color: var(--gold); }
+  .day-card.travel { border-left-color: #8e99a4; background: #f5f6f8; }
+  .day-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
+  }
+  .day-num { font-size: 13px; font-weight: 700; color: var(--mid); letter-spacing: 1px; }
+  .day-date { font-size: 12px; color: var(--text-light); }
+  .day-theme { font-size: 19px; font-weight: 600; color: var(--deep); }
+  .day-vibe {
+    font-size: 12px; padding: 2px 12px; border-radius: 12px; font-weight: 500;
+  }
+  .vibe-travel { background: #e2e6ea; color: #5a6470; }
+  .vibe-easy { background: #d4edda; color: #155724; }
+  .vibe-moderate { background: #fff3cd; color: #856404; }
+
+  .day-block { margin-bottom: 12px; }
+  .day-block h4 {
+    font-size: 14px; color: var(--mid); margin-bottom: 6px;
+    padding-left: 8px; border-left: 3px solid var(--light);
+  }
+  .day-block ul { padding-left: 0; list-style: none; }
+  .day-block li {
+    padding: 5px 0 5px 20px; position: relative; font-size: 14px; line-height: 1.7;
+  }
+  .day-block li::before {
+    content: ''; position: absolute; left: 0; top: 11px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--aqua);
+  }
+  .day-block li.highlight::before { background: var(--gold); }
+  .day-block li.food::before { background: #e8a838; }
+  .day-block li.warn::before { background: #e76f51; }
+  .route-box {
+    background: #eaf7f0; border-radius: 10px; padding: 10px 16px;
+    margin: 8px 0; font-size: 13px; color: var(--deep); font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .time-badge {
+    display: inline-block;
+    background: var(--deep); color: var(--white);
+    font-size: 12px; font-weight: 600;
+    padding: 1px 10px; border-radius: 10px;
+    margin-right: 4px;
+  }
+
+  .food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .food-cat {
+    background: #f8faf7; border-radius: 12px; padding: 16px 18px;
+    border-left: 3px solid var(--light);
+  }
+  .food-cat h4 { font-size: 15px; color: var(--deep); margin-bottom: 6px; }
+  .food-cat p { font-size: 13px; color: var(--text); margin: 2px 0; }
+
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+  .tip-item {
+    background: #f8faf7; border-radius: 10px; padding: 14px 16px; font-size: 14px;
+  }
+  .tip-item strong { color: var(--mid); }
+
+  .budget-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .budget-table th, .budget-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #eee; }
+  .budget-table th { background: #f0f5ef; color: var(--deep); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+  .budget-table tr:hover td { background: #fafcfa; }
+  .budget-table td.price { font-weight: 600; color: var(--mid); text-align: right; }
+
+  footer {
+    text-align: center; padding: 32px;
+    color: var(--text-light); font-size: 13px;
+  }
+
+  @media (max-width: 640px) {
+    section { padding: 20px; }
+    .train-row { grid-template-columns: 60px 1fr 60px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>荔波小七孔 5 天旅行计划</h1>
+  <div class="subtitle">上海 ⇄ 荔波 · 山水与民族风情 · 不吃辣友好</div>
+  <div class="badge-row">
+    <span class="badge">2026.8.14 — 8.18</span>
+    <span class="badge">2人出行</span>
+    <span class="badge highlight">全程免辣</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- 快速事实 -->
+<div class="info-banner">
+  <div class="info-card">
+    <div class="icon">🚂</div>
+    <div class="label">去程</div>
+    <div class="value">8.14 上海→重庆</div>
+  </div>
+  <div class="info-card">
+    <div class="icon">🚄</div>
+    <div class="label">中转</div>
+    <div class="value">8.15 重庆→荔波</div>
+  </div>
+  <div class="info-card">
+    <div class="icon">🏨</div>
+    <div class="label">住宿</div>
+    <div class="value">云岚栖境 ¥320/晚</div>
+  </div>
+  <div class="info-card">
+    <div class="icon">🎫</div>
+    <div class="label">门票</div>
+    <div class="value">¥170/人 联票</div>
+  </div>
+  <div class="info-card">
+    <div class="icon">🚄</div>
+    <div class="label">返程</div>
+    <div class="value">8.18 荔波→上海</div>
+  </div>
+</div>
+
+<!-- 交通时间线 -->
+<section>
+  <h2>🚂 大交通时间线</h2>
+
+  <div class="train-timeline">
+    <h4 style="color:var(--deep);margin-bottom:12px;">去程 · 8月14日 → 8月15日</h4>
+    <div class="train-row">
+      <div class="train-time">09:30</div>
+      <div><div class="train-station">上海站</div><small>出发，火车约 10h38min</small></div>
+      <div></div>
+    </div>
+    <div class="train-row">
+      <div class="train-time">20:08</div>
+      <div><div class="train-station">重庆北站</div><small>抵达 · 夜宿重庆车站附近</small></div>
+      <div></div>
+    </div>
+    <div class="train-row" style="border-top:2px solid #c8e0cf;margin-top:8px;padding-top:16px;">
+      <div class="train-time">07:07</div>
+      <div><div class="train-station">重庆（出发）</div><small>动车/高铁，约 4h33min</small></div>
+      <div></div>
+    </div>
+    <div class="train-row">
+      <div class="train-time">11:40</div>
+      <div><div class="train-station">荔波站</div><small>抵达！打车/滴滴前往云岚栖境酒店</small></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="train-timeline">
+    <h4 style="color:var(--deep);margin-bottom:12px;">返程 · 8月18日</h4>
+    <div class="train-row">
+      <div class="train-time">11:06</div>
+      <div><div class="train-station">荔波站</div><small>出发，约 10h55min</small></div>
+      <div></div>
+    </div>
+    <div class="train-row">
+      <div class="train-time">22:01</div>
+      <div><div class="train-station">上海</div><small>旅途结束</small></div>
+      <div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 住宿信息 -->
+<section>
+  <h2>🏨 住宿</h2>
+
+  <div class="hotel-card">
+    <h3>荔波云岚栖境酒店</h3>
+    <div class="hotel-meta">¥320 / 晚 · 入住 3 晚（8/15、8/16、8/17）共 ¥960</div>
+    <p style="font-size:14px;color:var(--text-light);line-height:1.8;">
+      ⚠️ <strong>位置提醒：</strong>酒店位于景区与县城之间，离两边都有一定距离，需打车/滴滴出行。<br>
+      每日行程务必预留充足的接驳时间，避免误车或错过入园时间。
+    </p>
+  </div>
+
+  <table class="budget-table">
+    <thead><tr><th>日期</th><th>住宿地点</th><th style="text-align:right">费用</th><th>备注</th></tr></thead>
+    <tbody>
+      <tr><td>8/14</td><td>重庆北站附近快捷酒店</td><td class="price">¥150-250</td><td>中转一夜，车站旁步行可达</td></tr>
+      <tr><td>8/15</td><td>荔波云岚栖境酒店</td><td class="price">¥320</td><td rowspan="3">固定住宿，免搬行李</td></tr>
+      <tr><td>8/16</td><td>荔波云岚栖境酒店</td><td class="price">¥320</td></tr>
+      <tr><td>8/17</td><td>荔波云岚栖境酒店</td><td class="price">¥320</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 每日行程 -->
+<section>
+  <h2>📅 每日行程</h2>
+
+  <!-- Day 1 -->
+  <div class="day-card travel">
+    <div class="day-header">
+      <div>
+        <div class="day-num">DAY 1</div>
+        <div class="day-date">8月14日 · 周四</div>
+      </div>
+      <span class="day-vibe vibe-travel">全天火车</span>
+    </div>
+    <div class="day-theme">上海 → 重庆 · 穿越半个中国</div>
+
+    <div class="day-block">
+      <ul>
+        <li><span class="time-badge">09:30</span> 上海站出发，沿途浙江→江西→湖南→贵州</li>
+        <li>火车上自备午餐零食，车窗风景从江南到西南群山</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>傍晚 · 抵达重庆</h4>
+      <ul>
+        <li><span class="time-badge">20:08</span> 抵达重庆北站，步行入住车站附近快捷酒店（¥150-250）</li>
+        <li>放好行李，出门感受山城夜生活</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>夜游 · 车站周边轻松逛</h4>
+      <ul>
+        <li><span class="time-badge">20:30</span> <strong>站前美食街</strong>：北站南广场对面就是小吃街，步行 3 分钟</li>
+        <li class="food"><strong>清汤抄手 / 重庆小面：</strong>天热来碗不加辣的清汤，皮薄馅嫩</li>
+        <li class="food">或尝试 <strong>凉糕 / 冰粉：</strong>红糖水配冰粉，消暑解乏</li>
+        <li><span class="time-badge">21:00</span> <strong>龙头寺公园：</strong>从北站南广场步行约 10 分钟，免费开放至 22:00。山顶观景台可远眺重庆北站片区夜景，吹吹江风散步消食</li>
+        <li><span class="time-badge">22:00</span> 返回酒店休息，明天 7:07 一早出发</li>
+      </ul>
+    </div>
+    <p style="font-size:13px;color:var(--text-light);margin-top:8px;">💡 重庆北站周边吃喝方便，但别走太远——第二天 7:07 的火车，早起是王道。</p>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div>
+        <div class="day-num">DAY 2</div>
+        <div class="day-date">8月15日 · 周五</div>
+      </div>
+      <span class="day-vibe vibe-easy">峡谷漫步</span>
+    </div>
+    <div class="day-theme">重庆 → 荔波 · 下午大七孔</div>
+
+    <div class="day-block">
+      <h4>上午 · 抵达荔波</h4>
+      <ul>
+        <li><span class="time-badge">07:07</span> 重庆出发</li>
+        <li><span class="time-badge">11:40</span> 抵达荔波站</li>
+        <li class="warn">打车前往云岚栖境酒店办入住、放行李（约 15-25 分钟），确认酒店到景区的接驳时间</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>中午 · 午餐（建议县城顺路吃）</h4>
+      <ul>
+        <li class="food"><strong>板吉清汤牛肉粉：</strong>鲜牛骨清汤，配本地米皮</li>
+        <li class="food">或 <strong>砂锅庄豆米火锅：</strong>豆米浓汤锅底，蘸料单独（不吃辣不蘸）</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>下午 · 大七孔（原始峡谷，2小时轻松游）</h4>
+      <ul>
+        <li class="warn"><strong>注意：</strong>从酒店到大七孔需预留约 20-30 分钟车程，合理规划出发时间</li>
+        <li class="highlight">含在联票内，人少清幽，从酒店过来下午刚好避开正午暴晒</li>
+        <li>路线：恐怖峡 → <strong>天生桥</strong>（巨型天然石桥）→ 妖风洞</li>
+        <li>推荐坐竹筏穿行峡谷，比小七孔更原生态</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>晚上</h4>
+      <ul>
+        <li class="food"><strong>邹胖哥好好吃</strong>（县城美食街）：清汤豆花烤鱼、上汤山野菜、白切瑶山土鸡 + 五色糯米饭</li>
+        <li>樟江沿岸散步，然后回酒店（预留返程车程）</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div>
+        <div class="day-num">DAY 3</div>
+        <div class="day-date">8月16日 · 周六</div>
+      </div>
+      <span class="day-vibe vibe-moderate">全天深度</span>
+    </div>
+    <div class="day-theme">小七孔全天深度游 · 翡翠山水</div>
+
+    <div class="route-box">
+      🔀 黄金路线（西门进 → 东门出，全程下坡省力）<br>
+      西门 → 卧龙潭 → 鸳鸯湖 → 翠谷瀑布 → 水上森林 → 68级跌水 → 拉雅瀑布 → 小七孔古桥 → 东门
+    </div>
+
+    <div class="day-block">
+      <h4>上午 · 7:30 开园（提前出发）</h4>
+      <ul>
+        <li class="warn"><strong>酒店→西门约 30-40 分钟车程，务必 6:30 前出发，争取 7:30 开园入场</strong></li>
+        <li>旺季旅行团 8-10 点集中，早到人少拍照干净</li>
+        <li class="highlight"><strong>卧龙潭：</strong>蒂芙尼蓝湖水，清晨水雾绝美</li>
+        <li><strong>鸳鸯湖：</strong>可选划船 ¥30/人，水上迷宫</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>中午至下午</h4>
+      <ul>
+        <li class="highlight"><strong>翠谷瀑布：</strong>赤脚踩溪水，清凉治愈</li>
+        <li><strong>水上森林：</strong>树根溪流交错，穿防滑凉鞋</li>
+        <li><strong>68级跌水瀑布：</strong>晴天容易看见彩虹</li>
+        <li><strong>拉雅瀑布：</strong>近距离水雾扑面</li>
+        <li class="highlight"><strong>小七孔古桥：</strong>600年清代石桥，碧水倒影</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>就餐 & 返程</h4>
+      <ul>
+        <li>午餐：景区便利店清汤米线 / 自带面包水果</li>
+        <li>16:30 左右东门出，打车回云岚栖境（约 20-30 分钟）</li>
+        <li class="food">晚餐：酒店附近或县城——清炖土鸡、清炒山笋</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div>
+        <div class="day-num">DAY 4</div>
+        <div class="day-date">8月17日 · 周日</div>
+      </div>
+      <span class="day-vibe vibe-easy">人文慢时光</span>
+    </div>
+    <div class="day-theme">古镇古寨 · 少数民族人文一日</div>
+
+    <div class="day-block">
+      <h4>上午 · 瑶山古寨</h4>
+      <ul>
+        <li class="warn">酒店到瑶山古寨约 25-35 分钟车程，合理预留时间</li>
+        <li class="highlight">白裤瑶非遗文化——千年铜鼓、瑶族织布、陀螺民俗表演</li>
+        <li>体验植物扎染手工，原始村寨拍照</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>中午</h4>
+      <ul>
+        <li class="food"><strong>老宅旧味饭庄：</strong>白切鸡、清炒河虾、蒸腊肉糯米饭</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>下午 · 荔波古镇 + 尧古布依寨</h4>
+      <ul>
+        <li><strong>荔波古镇：</strong>布依族、瑶族古建筑，手工扎染、银饰小店</li>
+        <li><strong>尧古布依寨：</strong>田园稻田散步，古法造纸作坊，原生态乡村</li>
+        <li>节奏舒缓，小七孔走完正好休整</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>晚上</h4>
+      <ul>
+        <li class="food">小吃：清汤割肉粉、蒸糕、野菜包 + 小素冰浆（黄瓜/芒果）</li>
+        <li>采购特产青梅、野生蜂蜜</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="day-card travel">
+    <div class="day-header">
+      <div>
+        <div class="day-num">DAY 5</div>
+        <div class="day-date">8月18日 · 周一</div>
+      </div>
+      <span class="day-vibe vibe-travel">全天返程</span>
+    </div>
+    <div class="day-theme">荔波 → 上海 · 回家</div>
+
+    <div class="day-block">
+      <ul>
+        <li><span class="time-badge">上午</span> 睡到自然醒，酒店退房，打车前往荔波站（预留 30 分钟以上车程）</li>
+        <li><span class="time-badge">11:06</span> 荔波站出发</li>
+        <li>车上自备午餐，沿途回顾照片</li>
+        <li><span class="time-badge">22:01</span> 抵达上海，旅途结束</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 接驳时间速查 -->
+<section>
+  <h2>🚗 酒店接驳时间速查（云岚栖境出发）</h2>
+  <table class="budget-table">
+    <thead><tr><th>目的地</th><th>预估车程</th><th>适用日期</th><th>注意事项</th></tr></thead>
+    <tbody>
+      <tr><td>荔波站</td><td>约 15-25 分钟</td><td>8/15 到达、8/18 返程</td><td>返程日提前出发，留足安检候车</td></tr>
+      <tr><td>大七孔景区</td><td>约 20-30 分钟</td><td>8/15 下午</td><td>下午游玩，17:00 前入园</td></tr>
+      <tr><td>小七孔西门</td><td>约 30-40 分钟</td><td>8/16 上午</td><td><strong>6:30 前必须出发</strong>，确保 7:30 入园</td></tr>
+      <tr><td>小七孔东门</td><td>约 20-30 分钟</td><td>8/16 下午</td><td>东门出园后打车回酒店</td></tr>
+      <tr><td>瑶山古寨</td><td>约 25-35 分钟</td><td>8/17 上午</td><td>半天即可，下午转古镇</td></tr>
+      <tr><td>荔波县城 / 古镇</td><td>约 15-20 分钟</td><td>每日用餐</td><td>县城美食集中，晚餐首选</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 预算 -->
+<section>
+  <h2>💰 预算参考（2人合计）</h2>
+  <table class="budget-table">
+    <thead><tr><th>类别</th><th>明细</th><th style="text-align:right">预估费用（¥）</th></tr></thead>
+    <tbody>
+      <tr><td>🚂 大交通</td><td>上海⇋荔波往返火车（含重庆中转）</td><td class="price">1,600-2,400</td></tr>
+      <tr><td>🏨 住宿</td><td>重庆1晚 ¥200 + 云岚栖境3晚 ¥960</td><td class="price">1,160</td></tr>
+      <tr><td>🚗 本地交通</td><td>酒店⇋景区/县城日常打车（3天）</td><td class="price">200-400</td></tr>
+      <tr><td>🎫 门票</td><td>大小七孔联票+观光车 ¥170×2</td><td class="price">340</td></tr>
+      <tr><td>🎭 体验</td><td>鸳鸯湖划船 + 瑶山古寨 + 竹筏 + 扎染</td><td class="price">200-300</td></tr>
+      <tr><td>🍽️ 餐饮</td><td>5天（含火车上自备）</td><td class="price">800-1,200</td></tr>
+      <tr><td>🛍️ 其他</td><td>特产、零食、保险</td><td class="price">200-400</td></tr>
+      <tr style="font-weight:700;background:#f0f5ef;"><td>📊 合计</td><td></td><td class="price">4,500-6,200</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 美食 -->
+<section>
+  <h2>🍽️ 不吃辣专属美食清单</h2>
+  <div class="food-grid">
+    <div class="food-cat">
+      <h4>🍲 汤类</h4>
+      <p>豆米火锅</p><p>清汤牛肉粉</p><p>清炖瑶山鸡汤</p><p>清汤酸汤鱼（无辣版）</p>
+    </div>
+    <div class="food-cat">
+      <h4>🍗 热菜</h4>
+      <p>白切土鸡</p><p>上汤桑芽菜</p><p>清炒竹笋</p><p>清蒸河鱼</p><p>豆腐圆子</p><p>清汤豆花烤鱼</p>
+    </div>
+    <div class="food-cat">
+      <h4>🍡 小吃</h4>
+      <p>五色糯米饭</p><p>冰浆（黄瓜/芒果）</p><p>杨梅汤</p><p>蒸糕</p><p>野菜包</p>
+    </div>
+    <div class="food-cat" style="border-left-color: #e8a838;">
+      <h4>⚠️ 避雷提醒</h4>
+      <p>虾酸牛肉（必辣）</p><p>普通酸汤火锅默认带辣</p><p>点餐一定提前说免辣！</p>
+    </div>
+  </div>
+</section>
+
+<!-- 必备物品 -->
+<section>
+  <h2>🎒 出行必备</h2>
+  <div class="tips-grid">
+    <div class="tip-item"><strong>防滑凉鞋/拖鞋</strong> —— 水上森林、翠谷瀑布需要踩水</div>
+    <div class="tip-item"><strong>薄外套</strong> —— 山林溪水边温度偏低，火车空调也冷</div>
+    <div class="tip-item"><strong>防晒 + 驱蚊水</strong> —— 户外全天必备</div>
+    <div class="tip-item"><strong>防水手机袋</strong> —— 瀑布踩水时保护设备</div>
+    <div class="tip-item"><strong>火车干粮</strong> —— 去程10h+返程11h，自备水果面包零食</div>
+    <div class="tip-item"><strong>充电宝 + 水杯</strong> —— 景区多处直饮水，火车上充电口有限</div>
+  </div>
+</section>
+
+<!-- 避坑 -->
+<section>
+  <h2>⚠️ 避坑提醒</h2>
+  <div class="tips-grid">
+    <div class="tip-item"><strong>酒店离景区和县城都有距离</strong>，每天务必提前规划出发时间，预留 20-40 分钟车程。</div>
+    <div class="tip-item"><strong>8/16 小七孔日，6:30 前必须从酒店出发</strong>，确保 7:30 开园入场，错过就要和旅行团挤。</div>
+    <div class="tip-item"><strong>小七孔不要东进西出！</strong>全程上坡极度耗费体力。西门进→东门出。</div>
+    <div class="tip-item"><strong>观光车票两日有效</strong>，8/15 和 8/16 刚好覆盖大小七孔，保留好车票。</div>
+    <div class="tip-item"><strong>重庆中转只住一晚</strong>，车站旁边最省心，别跑远。</div>
+    <div class="tip-item"><strong>8/18 返程 11:06 发车</strong>，酒店退房后直接去车站，不要在县城逗留。</div>
+    <div class="tip-item"><strong>所有餐馆都能做无辣版本</strong>，大胆提前告知服务员。</div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  荔波小七孔 5 天旅行计划 · 2026.8.14-8.18 · 上海 ⇄ 荔波 · 云岚栖境酒店 · 不吃辣友好
+</footer>
+
+</body>
+</html>
