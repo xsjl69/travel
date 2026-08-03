@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>荔波小七孔 5 天旅行计划 | 2026.8.14-8.18</title>
+<title>荔波小七孔 5 天旅行计划 | 2026.8.19-8.23</title>
 <style>
   :root {
     --deep: #0d4f3c;
@@ -102,6 +102,25 @@
     display: flex; align-items: center; gap: 10px;
   }
 
+  .flight-card {
+    background: linear-gradient(135deg, #f0f4f8, #e4edf4);
+    border-radius: 14px; padding: 24px 28px; margin-bottom: 20px;
+    border: 1px solid #c8d6e0;
+  }
+  .flight-row {
+    display: grid; grid-template-columns: 100px 1fr 100px;
+    align-items: center; gap: 16px; padding: 8px 0;
+  }
+  .flight-time { font-size: 22px; font-weight: 700; color: #1a3a5c; }
+  .flight-city { font-size: 17px; font-weight: 600; }
+  .flight-city small { font-weight: 400; color: var(--text-light); font-size: 12px; display: block; }
+  .flight-arrow { text-align: center; color: var(--text-light); font-size: 14px; padding: 4px 0; }
+  .flight-number {
+    display: inline-block; background: #1a3a5c; color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 4px;
+    margin-right: 8px;
+  }
+
   .hotel-card {
     background: linear-gradient(135deg, #f0f7f2, #e8f4ec);
     border-radius: 14px; padding: 20px 24px; margin-bottom: 24px;
@@ -114,7 +133,7 @@
     background: #f0f7f2; border-radius: 14px; padding: 24px 28px; margin-bottom: 24px;
   }
   .train-row {
-    display: grid; grid-template-columns: 80px 1fr 80px;
+    display: grid; grid-template-columns: 100px 1fr 120px;
     align-items: center; gap: 16px; padding: 10px 0;
     border-bottom: 1px dashed #c8e0cf;
   }
@@ -122,6 +141,11 @@
   .train-time { font-size: 18px; font-weight: 700; color: var(--deep); }
   .train-station { font-size: 16px; font-weight: 600; }
   .train-station small { font-weight: 400; color: var(--text-light); font-size: 12px; display: block; }
+  .train-num {
+    display: inline-block; background: var(--deep); color: #fff;
+    font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 4px;
+    margin-right: 6px;
+  }
 
   .day-card {
     border-left: 4px solid var(--mid);
@@ -201,7 +225,8 @@
 
   @media (max-width: 640px) {
     section { padding: 20px; }
-    .train-row { grid-template-columns: 60px 1fr 60px; }
+    .flight-row { grid-template-columns: 80px 1fr 80px; }
+    .train-row { grid-template-columns: 80px 1fr 100px; }
   }
 </style>
 </head>
@@ -209,9 +234,9 @@
 
 <div class="hero">
   <h1>荔波小七孔 5 天旅行计划</h1>
-  <div class="subtitle">上海 ⇄ 荔波 · 山水与民族风情 · 不吃辣友好</div>
+  <div class="subtitle">上海 ⇄ 荔波 · 空铁联运 · 山水与民族风情 · 不吃辣友好</div>
   <div class="badge-row">
-    <span class="badge">2026.8.14 — 8.18</span>
+    <span class="badge">2026.8.19 — 8.23</span>
     <span class="badge">2人出行</span>
     <span class="badge highlight">全程免辣</span>
   </div>
@@ -222,14 +247,14 @@
 <!-- 快速事实 -->
 <div class="info-banner">
   <div class="info-card">
-    <div class="icon">🚂</div>
-    <div class="label">去程</div>
-    <div class="value">8.14 上海→重庆</div>
+    <div class="icon">✈️</div>
+    <div class="label">去程航班</div>
+    <div class="value">8.19 FM9385</div>
   </div>
   <div class="info-card">
     <div class="icon">🚄</div>
-    <div class="label">中转</div>
-    <div class="value">8.15 重庆→荔波</div>
+    <div class="label">接驳高铁</div>
+    <div class="value">G3578 南宁→荔波</div>
   </div>
   <div class="info-card">
     <div class="icon">🏨</div>
@@ -237,56 +262,166 @@
     <div class="value">云岚栖境 ¥320/晚</div>
   </div>
   <div class="info-card">
-    <div class="icon">🎫</div>
-    <div class="label">门票</div>
-    <div class="value">¥170/人 联票</div>
+    <div class="icon">✈️</div>
+    <div class="label">返程航班</div>
+    <div class="value">8.23 CZ5287</div>
   </div>
   <div class="info-card">
     <div class="icon">🚄</div>
-    <div class="label">返程</div>
-    <div class="value">8.18 荔波→上海</div>
+    <div class="label">返程高铁</div>
+    <div class="value">G3569 荔波→南宁</div>
   </div>
 </div>
 
-<!-- 交通时间线 -->
+<!-- 去程交通 -->
 <section>
-  <h2>🚂 大交通时间线</h2>
+  <h2>✈️ 去程交通 · 8月19日</h2>
+
+  <div class="flight-card">
+    <div class="flight-row">
+      <div class="flight-time">09:00</div>
+      <div>
+        <div class="flight-city">上海浦东 T1</div>
+        <small>起飞</small>
+      </div>
+      <div style="text-align:right;font-size:13px;color:var(--text-light);">飞行 2h45min</div>
+    </div>
+    <div class="flight-arrow">
+      <span class="flight-number">FM9385</span> 上航 · 波音737 · 含早餐 · 准点率 90%
+    </div>
+    <div class="flight-row">
+      <div class="flight-time">11:45</div>
+      <div>
+        <div class="flight-city">南宁吴圩 T2</div>
+        <small>落地 · 托运行李额 20KG</small>
+      </div>
+      <div style="text-align:right;font-size:12px;color:var(--text-light);">¥1,350/人</div>
+    </div>
+  </div>
+
+  <div style="background:#f0f7f2;border-radius:10px;padding:16px 24px;margin-bottom:20px;">
+    <h4 style="color:var(--deep);margin-bottom:10px;">🔄 南宁中转 3h07min</h4>
+    <table style="width:100%;font-size:13px;border-collapse:collapse;">
+      <thead><tr style="color:var(--deep);"><th style="text-align:left;padding:6px 8px;">方案</th><th style="text-align:left;padding:6px 8px;">路线</th><th style="text-align:left;padding:6px 8px;">发车时间</th><th style="text-align:left;padding:6px 8px;">耗时</th><th style="text-align:right;padding:6px 8px;">票价</th></tr></thead>
+      <tbody>
+        <tr style="background:#d4edda;">
+          <td style="padding:6px 8px;font-weight:600;">✅ 首选</td>
+          <td style="padding:6px 8px;"><strong>机场巴士 4 号线</strong><br><small style="color:var(--text-light);">吴圩 T2 → 南宁东站（直达）</small></td>
+          <td style="padding:6px 8px;">12:15 / 12:45</td>
+          <td style="padding:6px 8px;">约 1h20min</td>
+          <td style="padding:6px 8px;font-weight:700;text-align:right;">¥20</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 8px;">备选</td>
+          <td style="padding:6px 8px;"><strong>机场巴士 2 号线</strong><br><small style="color:var(--text-light);">吴圩 T2 → 民族广场站 → 换乘地铁 1 号线 → 南宁东站</small></td>
+          <td style="padding:6px 8px;">12:10 / 12:50</td>
+          <td style="padding:6px 8px;">约 1h40min</td>
+          <td style="padding:6px 8px;font-weight:700;text-align:right;">¥20+¥4</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 8px;">备选</td>
+          <td style="padding:6px 8px;"><strong>打车 / 网约车</strong><br><small style="color:var(--text-light);">吴圩 T2 直达南宁东站</small></td>
+          <td style="padding:6px 8px;">随时出发</td>
+          <td style="padding:6px 8px;">约 50 分钟</td>
+          <td style="padding:6px 8px;font-weight:700;text-align:right;">约 ¥80-100</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--text-light);margin-top:8px;">💡 首选 4 号线直达省心。12:45 发车 → 约 14:05 到东站，距 G3578 发车还有 47 分钟，进站候车刚好。也可在机场或南宁东站用午餐。</p>
+  </div>
 
   <div class="train-timeline">
-    <h4 style="color:var(--deep);margin-bottom:12px;">去程 · 8月14日 → 8月15日</h4>
     <div class="train-row">
-      <div class="train-time">09:30</div>
-      <div><div class="train-station">上海站</div><small>出发，火车约 10h38min</small></div>
-      <div></div>
+      <div class="train-time">14:52</div>
+      <div>
+        <div class="train-station">南宁东站</div>
+        <small>出发</small>
+      </div>
+      <div style="text-align:right">
+        <span class="train-num">G3578</span>
+        <span style="font-size:12px;color:var(--text-light);">二等座 ¥161</span>
+      </div>
     </div>
     <div class="train-row">
-      <div class="train-time">20:08</div>
-      <div><div class="train-station">重庆北站</div><small>抵达 · 夜宿重庆车站附近</small></div>
+      <div class="train-time">16:22</div>
+      <div>
+        <div class="train-station">荔波站</div>
+        <small>抵达！1h30min · 打车前往云岚栖境（约 15-25min）</small>
+      </div>
       <div></div>
     </div>
-    <div class="train-row" style="border-top:2px solid #c8e0cf;margin-top:8px;padding-top:16px;">
-      <div class="train-time">07:07</div>
-      <div><div class="train-station">重庆（出发）</div><small>动车/高铁，约 4h33min</small></div>
-      <div></div>
+  </div>
+</section>
+
+<!-- 返程交通 -->
+<section>
+  <h2>✈️ 返程交通 · 8月23日</h2>
+
+  <div class="train-timeline">
+    <div class="train-row">
+      <div class="train-time">09:36</div>
+      <div>
+        <div class="train-station">荔波站</div>
+        <small>出发</small>
+      </div>
+      <div style="text-align:right">
+        <span class="train-num">G3569</span>
+        <span style="font-size:12px;color:var(--text-light);">二等座 ¥152</span>
+      </div>
     </div>
     <div class="train-row">
-      <div class="train-time">11:40</div>
-      <div><div class="train-station">荔波站</div><small>抵达！打车/滴滴前往云岚栖境酒店</small></div>
+      <div class="train-time">11:06</div>
+      <div>
+        <div class="train-station">南宁东站</div>
+        <small>抵达 · 1h30min</small>
+      </div>
       <div></div>
     </div>
   </div>
 
-  <div class="train-timeline">
-    <h4 style="color:var(--deep);margin-bottom:12px;">返程 · 8月18日</h4>
-    <div class="train-row">
-      <div class="train-time">11:06</div>
-      <div><div class="train-station">荔波站</div><small>出发，约 10h55min</small></div>
-      <div></div>
+  <div style="background:#f0f7f2;border-radius:10px;padding:16px 24px;margin-bottom:20px;">
+    <h4 style="color:var(--deep);margin-bottom:10px;">🔄 南宁中转 2h29min</h4>
+    <table style="width:100%;font-size:13px;border-collapse:collapse;">
+      <thead><tr style="color:var(--deep);"><th style="text-align:left;padding:6px 8px;">方案</th><th style="text-align:left;padding:6px 8px;">路线</th><th style="text-align:left;padding:6px 8px;">发车/出发</th><th style="text-align:left;padding:6px 8px;">耗时</th><th style="text-align:right;padding:6px 8px;">票价</th></tr></thead>
+      <tbody>
+        <tr style="background:#d4edda;">
+          <td style="padding:6px 8px;font-weight:600;">✅ 首选</td>
+          <td style="padding:6px 8px;"><strong>地铁 1 号线</strong> 南宁东站 → 万象城站<br><small style="color:var(--text-light);">→ 换乘 <strong>机场巴士 2 号线</strong> → 吴圩 T2</small></td>
+          <td style="padding:6px 8px;">地铁随到随走<br>巴士 12:05</td>
+          <td style="padding:6px 8px;">地铁 15min<br>巴士约 1h</td>
+          <td style="padding:6px 8px;font-weight:700;text-align:right;">¥3+¥20</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 8px;">备选</td>
+          <td style="padding:6px 8px;"><strong>打车 / 网约车</strong><br><small style="color:var(--text-light);">南宁东站直达吴圩 T2</small></td>
+          <td style="padding:6px 8px;">随到随走</td>
+          <td style="padding:6px 8px;">约 50 分钟</td>
+          <td style="padding:6px 8px;font-weight:700;text-align:right;">约 ¥80-100</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--text-light);margin-top:8px;">💡 首选地铁+巴士：11:06 到南宁东 → 地铁 15min 到万象城站 → 12:05 巴士发车 → 约 13:05 到机场，距 CZ5287 起飞还有 30 分钟。备选南宁东站直接打车到机场约 50 分钟 ¥80-100。</p>
+  </div>
+
+  <div class="flight-card">
+    <div class="flight-row">
+      <div class="flight-time">13:35</div>
+      <div>
+        <div class="flight-city">南宁吴圩 T2</div>
+        <small>起飞</small>
+      </div>
+      <div style="text-align:right;font-size:13px;color:var(--text-light);">飞行 2h55min</div>
     </div>
-    <div class="train-row">
-      <div class="train-time">22:01</div>
-      <div><div class="train-station">上海</div><small>旅途结束</small></div>
-      <div></div>
+    <div class="flight-arrow">
+      <span class="flight-number">CZ5287</span> 南航 · 波音737 · 含点心 · 准点率 87%
+    </div>
+    <div class="flight-row">
+      <div class="flight-time">16:30</div>
+      <div>
+        <div class="flight-city">上海浦东 T2</div>
+        <small>到家！</small>
+      </div>
+      <div style="text-align:right;font-size:12px;color:var(--text-light);">¥1,350/人</div>
     </div>
   </div>
 </section>
@@ -297,7 +432,7 @@
 
   <div class="hotel-card">
     <h3>荔波云岚栖境酒店</h3>
-    <div class="hotel-meta">¥320 / 晚 · 入住 3 晚（8/15、8/16、8/17）共 ¥960</div>
+    <div class="hotel-meta">¥320 / 晚 · 入住 4 晚（8/19、8/20、8/21、8/22）共 ¥1,280</div>
     <p style="font-size:14px;color:var(--text-light);line-height:1.8;">
       ⚠️ <strong>位置提醒：</strong>酒店位于景区与县城之间，离两边都有一定距离，需打车/滴滴出行。<br>
       每日行程务必预留充足的接驳时间，避免误车或错过入园时间。
@@ -307,10 +442,10 @@
   <table class="budget-table">
     <thead><tr><th>日期</th><th>住宿地点</th><th style="text-align:right">费用</th><th>备注</th></tr></thead>
     <tbody>
-      <tr><td>8/14</td><td>重庆北站附近快捷酒店</td><td class="price">¥150-250</td><td>中转一夜，车站旁步行可达</td></tr>
-      <tr><td>8/15</td><td>荔波云岚栖境酒店</td><td class="price">¥320</td><td rowspan="3">固定住宿，免搬行李</td></tr>
-      <tr><td>8/16</td><td>荔波云岚栖境酒店</td><td class="price">¥320</td></tr>
-      <tr><td>8/17</td><td>荔波云岚栖境酒店</td><td class="price">¥320</td></tr>
+      <tr><td>8/19</td><td>荔波云岚栖境酒店</td><td class="price">¥320</td><td rowspan="4">固定住宿，免搬行李</td></tr>
+      <tr><td>8/20</td><td>荔波云岚栖境酒店</td><td class="price">¥320</td></tr>
+      <tr><td>8/21</td><td>荔波云岚栖境酒店</td><td class="price">¥320</td></tr>
+      <tr><td>8/22</td><td>荔波云岚栖境酒店</td><td class="price">¥320</td></tr>
     </tbody>
   </table>
 </section>
@@ -324,38 +459,50 @@
     <div class="day-header">
       <div>
         <div class="day-num">DAY 1</div>
-        <div class="day-date">8月14日 · 周四</div>
+        <div class="day-date">8月19日 · 周二</div>
       </div>
-      <span class="day-vibe vibe-travel">全天火车</span>
+      <span class="day-vibe vibe-travel">空铁入黔</span>
     </div>
-    <div class="day-theme">上海 → 重庆 · 穿越半个中国</div>
+    <div class="day-theme">上海 → 南宁 → 荔波 · 飞驰入黔</div>
 
     <div class="day-block">
+      <h4>上午 · 飞行</h4>
       <ul>
-        <li><span class="time-badge">09:30</span> 上海站出发，沿途浙江→江西→湖南→贵州</li>
-        <li>火车上自备午餐零食，车窗风景从江南到西南群山</li>
+        <li><span class="time-badge">09:00</span> <strong>FM9385</strong> 上海浦东 T1 起飞，机上早餐</li>
+        <li><span class="time-badge">11:45</span> 落地南宁吴圩 T2，托运行李额 20KG</li>
       </ul>
     </div>
 
     <div class="day-block">
-      <h4>傍晚 · 抵达重庆</h4>
+      <h4>中午 · 南宁中转（3h07min）</h4>
       <ul>
-        <li><span class="time-badge">20:08</span> 抵达重庆北站，步行入住车站附近快捷酒店（¥150-250）</li>
-        <li>放好行李，出门感受山城夜生活</li>
+        <li><span class="time-badge">11:45</span> 落地南宁吴圩 T2，取行李</li>
+        <li class="highlight"><strong>机场巴士 4 号线</strong>（首选）：12:45 发车，直达南宁东站，约 1h20min，¥20/人</li>
+        <li>备选：机场巴士 2 号线 12:10/12:50 → 民族广场换地铁 1 号线，约 1h40min，¥24/人</li>
+        <li>备选：打车/网约车直达南宁东站，约 50 分钟，¥80-100</li>
+        <li class="food"><strong>午餐：</strong>机场到达层快餐 / 南宁东站出站口——老友粉（不加辣）、卷筒粉、柠檬鸭饭</li>
+        <li><span class="time-badge">~14:05</span> 到达南宁东站，距 G3578 发车约 47 分钟，从容进站</li>
       </ul>
     </div>
 
     <div class="day-block">
-      <h4>夜游 · 车站周边轻松逛</h4>
+      <h4>下午 · 高铁抵达</h4>
       <ul>
-        <li><span class="time-badge">20:30</span> <strong>站前美食街</strong>：北站南广场对面就是小吃街，步行 3 分钟</li>
-        <li class="food"><strong>清汤抄手 / 重庆小面：</strong>天热来碗不加辣的清汤，皮薄馅嫩</li>
-        <li class="food">或尝试 <strong>凉糕 / 冰粉：</strong>红糖水配冰粉，消暑解乏</li>
-        <li><span class="time-badge">21:00</span> <strong>龙头寺公园：</strong>从北站南广场步行约 10 分钟，免费开放至 22:00。山顶观景台可远眺重庆北站片区夜景，吹吹江风散步消食</li>
-        <li><span class="time-badge">22:00</span> 返回酒店休息，明天 7:07 一早出发</li>
+        <li><span class="time-badge">14:52</span> <strong>G3578</strong> 南宁东站出发，二等座</li>
+        <li><span class="time-badge">16:22</span> 抵达荔波站，打车前往云岚栖境酒店（约 15-25 分钟）</li>
       </ul>
     </div>
-    <p style="font-size:13px;color:var(--text-light);margin-top:8px;">💡 重庆北站周边吃喝方便，但别走太远——第二天 7:07 的火车，早起是王道。</p>
+
+    <div class="day-block">
+      <h4>傍晚 · 初探荔波</h4>
+      <ul>
+        <li>酒店入住、放行李、休整</li>
+        <li><span class="time-badge">18:00</span> 打车前往荔波县城（约 15-20 分钟）</li>
+        <li class="food"><strong>邹胖哥好好吃</strong>（县城美食街）：清汤豆花烤鱼、上汤山野菜、白切瑶山土鸡 + 五色糯米饭</li>
+        <li>樟江沿岸散步，荔波古镇夜游，采购水果零食</li>
+        <li><span class="time-badge">21:00</span> 返回酒店休息</li>
+      </ul>
+    </div>
   </div>
 
   <!-- Day 2 -->
@@ -363,44 +510,43 @@
     <div class="day-header">
       <div>
         <div class="day-num">DAY 2</div>
-        <div class="day-date">8月15日 · 周五</div>
+        <div class="day-date">8月20日 · 周三</div>
       </div>
-      <span class="day-vibe vibe-easy">峡谷漫步</span>
+      <span class="day-vibe vibe-easy">峡谷奇观</span>
     </div>
-    <div class="day-theme">重庆 → 荔波 · 下午大七孔</div>
+    <div class="day-theme">大七孔全天 · 茂兰探秘</div>
 
     <div class="day-block">
-      <h4>上午 · 抵达荔波</h4>
+      <h4>上午 · 大七孔（原始峡谷，2-3小时）</h4>
       <ul>
-        <li><span class="time-badge">07:07</span> 重庆出发</li>
-        <li><span class="time-badge">11:40</span> 抵达荔波站</li>
-        <li class="warn">打车前往云岚栖境酒店办入住、放行李（约 15-25 分钟），确认酒店到景区的接驳时间</li>
-      </ul>
-    </div>
-
-    <div class="day-block">
-      <h4>中午 · 午餐（建议县城顺路吃）</h4>
-      <ul>
-        <li class="food"><strong>板吉清汤牛肉粉：</strong>鲜牛骨清汤，配本地米皮</li>
-        <li class="food">或 <strong>砂锅庄豆米火锅：</strong>豆米浓汤锅底，蘸料单独（不吃辣不蘸）</li>
-      </ul>
-    </div>
-
-    <div class="day-block">
-      <h4>下午 · 大七孔（原始峡谷，2小时轻松游）</h4>
-      <ul>
-        <li class="warn"><strong>注意：</strong>从酒店到大七孔需预留约 20-30 分钟车程，合理规划出发时间</li>
-        <li class="highlight">含在联票内，人少清幽，从酒店过来下午刚好避开正午暴晒</li>
+        <li class="warn">酒店到大七孔约 20-30 分钟车程，8:00 出发即可</li>
+        <li class="highlight">含在联票内，上午人少清幽</li>
         <li>路线：恐怖峡 → <strong>天生桥</strong>（巨型天然石桥）→ 妖风洞</li>
         <li>推荐坐竹筏穿行峡谷，比小七孔更原生态</li>
       </ul>
     </div>
 
     <div class="day-block">
+      <h4>中午</h4>
+      <ul>
+        <li class="food">景区简餐或回县城：<strong>板吉清汤牛肉粉</strong>（鲜牛骨清汤配本地米皮）</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
+      <h4>下午 · 茂兰自然保护区（可选）</h4>
+      <ul>
+        <li>距酒店约 40 分钟车程，原始喀斯特森林</li>
+        <li><strong>青龙潭：</strong>碧绿深潭，比卧龙潭更野；<strong>金狮洞：</strong>未开发溶洞，需带头灯</li>
+        <li class="warn">体力消耗中等，量力而行；也可选择回酒店休息或去县城闲逛</li>
+      </ul>
+    </div>
+
+    <div class="day-block">
       <h4>晚上</h4>
       <ul>
-        <li class="food"><strong>邹胖哥好好吃</strong>（县城美食街）：清汤豆花烤鱼、上汤山野菜、白切瑶山土鸡 + 五色糯米饭</li>
-        <li>樟江沿岸散步，然后回酒店（预留返程车程）</li>
+        <li class="food"><strong>砂锅庄豆米火锅：</strong>豆米浓汤锅底，蘸料单独（不吃辣不蘸）</li>
+        <li>早早休息，为明天小七孔全天攒体力</li>
       </ul>
     </div>
   </div>
@@ -410,7 +556,7 @@
     <div class="day-header">
       <div>
         <div class="day-num">DAY 3</div>
-        <div class="day-date">8月16日 · 周六</div>
+        <div class="day-date">8月21日 · 周四</div>
       </div>
       <span class="day-vibe vibe-moderate">全天深度</span>
     </div>
@@ -457,7 +603,7 @@
     <div class="day-header">
       <div>
         <div class="day-num">DAY 4</div>
-        <div class="day-date">8月17日 · 周日</div>
+        <div class="day-date">8月22日 · 周五</div>
       </div>
       <span class="day-vibe vibe-easy">人文慢时光</span>
     </div>
@@ -502,18 +648,19 @@
     <div class="day-header">
       <div>
         <div class="day-num">DAY 5</div>
-        <div class="day-date">8月18日 · 周一</div>
+        <div class="day-date">8月23日 · 周六</div>
       </div>
       <span class="day-vibe vibe-travel">全天返程</span>
     </div>
-    <div class="day-theme">荔波 → 上海 · 回家</div>
+    <div class="day-theme">荔波 → 南宁 → 上海 · 回家</div>
 
     <div class="day-block">
       <ul>
-        <li><span class="time-badge">上午</span> 睡到自然醒，酒店退房，打车前往荔波站（预留 30 分钟以上车程）</li>
-        <li><span class="time-badge">11:06</span> 荔波站出发</li>
-        <li>车上自备午餐，沿途回顾照片</li>
-        <li><span class="time-badge">22:01</span> 抵达上海，旅途结束</li>
+        <li><span class="time-badge">08:00</span> 早起退房，打车前往荔波站（约 15-25 分钟）</li>
+        <li><span class="time-badge">09:36</span> <strong>G3569</strong> 荔波站出发</li>
+        <li><span class="time-badge">11:06</span> 抵达南宁东站，地铁 1 号线 15min 到万象城站（¥3），换乘机场巴士 2 号线 12:05 发车（¥20），约 13:05 到机场</li>
+        <li><span class="time-badge">13:35</span> <strong>CZ5287</strong> 南宁吴圩 T2 起飞</li>
+        <li><span class="time-badge">16:30</span> 落地上海浦东 T2，旅途结束</li>
       </ul>
     </div>
   </div>
@@ -525,11 +672,12 @@
   <table class="budget-table">
     <thead><tr><th>目的地</th><th>预估车程</th><th>适用日期</th><th>注意事项</th></tr></thead>
     <tbody>
-      <tr><td>荔波站</td><td>约 15-25 分钟</td><td>8/15 到达、8/18 返程</td><td>返程日提前出发，留足安检候车</td></tr>
-      <tr><td>大七孔景区</td><td>约 20-30 分钟</td><td>8/15 下午</td><td>下午游玩，17:00 前入园</td></tr>
-      <tr><td>小七孔西门</td><td>约 30-40 分钟</td><td>8/16 上午</td><td><strong>6:30 前必须出发</strong>，确保 7:30 入园</td></tr>
-      <tr><td>小七孔东门</td><td>约 20-30 分钟</td><td>8/16 下午</td><td>东门出园后打车回酒店</td></tr>
-      <tr><td>瑶山古寨</td><td>约 25-35 分钟</td><td>8/17 上午</td><td>半天即可，下午转古镇</td></tr>
+      <tr><td>荔波站</td><td>约 15-25 分钟</td><td>8/19 到达、8/23 返程</td><td>返程日 8:00 前退房出发</td></tr>
+      <tr><td>大七孔景区</td><td>约 20-30 分钟</td><td>8/20 上午</td><td>8:00 舒适出发即可</td></tr>
+      <tr><td>小七孔西门</td><td>约 30-40 分钟</td><td>8/21 上午</td><td><strong>6:30 前必须出发</strong>，确保 7:30 入园</td></tr>
+      <tr><td>小七孔东门</td><td>约 20-30 分钟</td><td>8/21 下午</td><td>东门出园后打车回酒店</td></tr>
+      <tr><td>瑶山古寨</td><td>约 25-35 分钟</td><td>8/22 上午</td><td>半天即可，下午转古镇</td></tr>
+      <tr><td>茂兰保护区</td><td>约 40 分钟</td><td>8/20 下午（可选）</td><td>体力消耗中等，量力而行</td></tr>
       <tr><td>荔波县城 / 古镇</td><td>约 15-20 分钟</td><td>每日用餐</td><td>县城美食集中，晚餐首选</td></tr>
     </tbody>
   </table>
@@ -541,14 +689,16 @@
   <table class="budget-table">
     <thead><tr><th>类别</th><th>明细</th><th style="text-align:right">预估费用（¥）</th></tr></thead>
     <tbody>
-      <tr><td>🚂 大交通</td><td>上海⇋荔波往返火车（含重庆中转）</td><td class="price">1,600-2,400</td></tr>
-      <tr><td>🏨 住宿</td><td>重庆1晚 ¥200 + 云岚栖境3晚 ¥960</td><td class="price">1,160</td></tr>
-      <tr><td>🚗 本地交通</td><td>酒店⇋景区/县城日常打车（3天）</td><td class="price">200-400</td></tr>
+      <tr><td>✈️ 往返机票</td><td>FM9385 ¥1,350 + CZ5287 ¥1,350（含税，20KG行李）</td><td class="price">2,700</td></tr>
+      <tr><td>🚄 往返高铁</td><td>G3578 去程 ¥161 + G3569 返程 ¥152</td><td class="price">313</td></tr>
+      <tr><td>🏨 住宿</td><td>云岚栖境 4 晚 ¥320×4</td><td class="price">1,280</td></tr>
+      <tr><td>🚗 本地交通</td><td>酒店⇋景区/县城日常打车（4 天）</td><td class="price">250-450</td></tr>
       <tr><td>🎫 门票</td><td>大小七孔联票+观光车 ¥170×2</td><td class="price">340</td></tr>
-      <tr><td>🎭 体验</td><td>鸳鸯湖划船 + 瑶山古寨 + 竹筏 + 扎染</td><td class="price">200-300</td></tr>
-      <tr><td>🍽️ 餐饮</td><td>5天（含火车上自备）</td><td class="price">800-1,200</td></tr>
+      <tr><td>🎭 体验</td><td>鸳鸯湖划船 + 瑶山古寨 + 竹筏 + 扎染 + 茂兰（可选）</td><td class="price">200-400</td></tr>
+      <tr><td>🍽️ 餐饮</td><td>5 天（含南宁中转午餐）</td><td class="price">900-1,300</td></tr>
       <tr><td>🛍️ 其他</td><td>特产、零食、保险</td><td class="price">200-400</td></tr>
-      <tr style="font-weight:700;background:#f0f5ef;"><td>📊 合计</td><td></td><td class="price">4,500-6,200</td></tr>
+      <tr style="font-weight:700;background:#f0f5ef;"><td>📊 合计</td><td></td><td class="price">6,183-7,483</td></tr>
+      <tr style="background:#feffe6;"><td>📊 人均</td><td></td><td class="price">3,091-3,741</td></tr>
     </tbody>
   </table>
 </section>
@@ -581,32 +731,47 @@
   <h2>🎒 出行必备</h2>
   <div class="tips-grid">
     <div class="tip-item"><strong>防滑凉鞋/拖鞋</strong> —— 水上森林、翠谷瀑布需要踩水</div>
-    <div class="tip-item"><strong>薄外套</strong> —— 山林溪水边温度偏低，火车空调也冷</div>
+    <div class="tip-item"><strong>薄外套</strong> —— 山林溪水边温度偏低，飞机空调也冷</div>
     <div class="tip-item"><strong>防晒 + 驱蚊水</strong> —— 户外全天必备</div>
     <div class="tip-item"><strong>防水手机袋</strong> —— 瀑布踩水时保护设备</div>
-    <div class="tip-item"><strong>火车干粮</strong> —— 去程10h+返程11h，自备水果面包零食</div>
-    <div class="tip-item"><strong>充电宝 + 水杯</strong> —— 景区多处直饮水，火车上充电口有限</div>
+    <div class="tip-item"><strong>充电宝 + 水杯</strong> —— 景区多处直饮水</div>
+    <div class="tip-item"><strong>身份证</strong> —— 乘机、酒店入住必备</div>
   </div>
+</section>
+
+<!-- 交通凭证速查 -->
+<section>
+  <h2>🎫 交通凭证速查卡</h2>
+  <table class="budget-table">
+    <thead><tr><th>日期</th><th>类型</th><th>编号</th><th>区间</th><th>时间</th><th style="text-align:right">单价</th></tr></thead>
+    <tbody>
+      <tr><td>8/19</td><td>✈️ 航班</td><td><strong>FM9385</strong></td><td>浦东 T1 → 吴圩 T2</td><td>09:00-11:45</td><td class="price">¥1,350</td></tr>
+      <tr><td>8/19</td><td>🚄 高铁</td><td><strong>G3578</strong></td><td>南宁东 → 荔波</td><td>14:52-16:22</td><td class="price">¥161</td></tr>
+      <tr><td>8/23</td><td>🚄 高铁</td><td><strong>G3569</strong></td><td>荔波 → 南宁东</td><td>09:36-11:06</td><td class="price">¥152</td></tr>
+      <tr><td>8/23</td><td>✈️ 航班</td><td><strong>CZ5287</strong></td><td>吴圩 T2 → 浦东 T2</td><td>13:35-16:30</td><td class="price">¥1,350</td></tr>
+    </tbody>
+  </table>
 </section>
 
 <!-- 避坑 -->
 <section>
   <h2>⚠️ 避坑提醒</h2>
   <div class="tips-grid">
+    <div class="tip-item"><strong>去程中转首选机场巴士 4 号线</strong>：12:45 发车直达南宁东站（1h20min，¥20），到站后距发车 47 分钟，从容进站。备选 2 号线+地铁约 1h40min。</div>
+    <div class="tip-item"><strong>返程关键衔接</strong>：G3569 到南宁东 11:06，地铁 1 号线 15min 到万象城站（¥3），换乘机场巴士 2 号线 12:05 发车（¥20），约 13:05 到机场。12:05 的巴士是返程锚点，晚了就直接南宁东站打车到机场（约 50min ¥80-100）。</div>
+    <div class="tip-item"><strong>G3569 8月9日15:30起售</strong>，记得设闹钟抢票。</div>
     <div class="tip-item"><strong>酒店离景区和县城都有距离</strong>，每天务必提前规划出发时间，预留 20-40 分钟车程。</div>
-    <div class="tip-item"><strong>8/16 小七孔日，6:30 前必须从酒店出发</strong>，确保 7:30 开园入场，错过就要和旅行团挤。</div>
+    <div class="tip-item"><strong>8/21 小七孔日，6:30 前必须从酒店出发</strong>，确保 7:30 开园入场。</div>
     <div class="tip-item"><strong>小七孔不要东进西出！</strong>全程上坡极度耗费体力。西门进→东门出。</div>
-    <div class="tip-item"><strong>观光车票两日有效</strong>，8/15 和 8/16 刚好覆盖大小七孔，保留好车票。</div>
-    <div class="tip-item"><strong>重庆中转只住一晚</strong>，车站旁边最省心，别跑远。</div>
-    <div class="tip-item"><strong>8/18 返程 11:06 发车</strong>，酒店退房后直接去车站，不要在县城逗留。</div>
-    <div class="tip-item"><strong>所有餐馆都能做无辣版本</strong>，大胆提前告知服务员。</div>
+    <div class="tip-item"><strong>观光车票两日有效</strong>，8/20 和 8/21 刚好覆盖大小七孔，保留好车票。</div>
+    <div class="tip-item"><strong>茂兰可选</strong>——体力够就冲青龙潭+金狮洞，累了就回县城喝茶闲逛。</div>
   </div>
 </section>
 
 </div>
 
 <footer>
-  荔波小七孔 5 天旅行计划 · 2026.8.14-8.18 · 上海 ⇄ 荔波 · 云岚栖境酒店 · 不吃辣友好
+  荔波小七孔 5 天旅行计划 · 2026.8.19-8.23 · FM9385/G3578 → CZ5287/G3569 · 云岚栖境酒店 · 不吃辣友好
 </footer>
 
 </body>
